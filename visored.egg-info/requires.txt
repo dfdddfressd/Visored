@@ -1,0 +1,9 @@
+aiohttp>=3.9.0
+certifi>=2024.0.0
+aiolimiter>=1.1.0
+numpy>=1.24.0
+opencv-python-headless>=4.8.0
+tqdm>=4.66.0
+
+[dev]
+pytest>=7.0.0

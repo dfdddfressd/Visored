@@ -1,0 +1,15 @@
+pyproject.toml
+tests/test_gutter_segment.py
+visored/__init__.py
+visored/__main__.py
+visored/cli.py
+visored/mangadex.py
+visored/manifest.py
+visored/pipeline.py
+visored/segment.py
+visored.egg-info/PKG-INFO
+visored.egg-info/SOURCES.txt
+visored.egg-info/dependency_links.txt
+visored.egg-info/entry_points.txt
+visored.egg-info/requires.txt
+visored.egg-info/top_level.txt
