@@ -21,6 +21,8 @@ from visored.segment import (
     DEFAULT_GUTTER_MAX_LEAVES,
     DEFAULT_GUTTER_SMOOTH,
     DEFAULT_GUTTER_STRENGTH,
+    DEFAULT_MAX_IMAGE_BYTES,
+    DEFAULT_MAX_IMAGE_SIDE,
 )
 
 
@@ -119,7 +121,33 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     p.add_argument(
         "--trust-existing",
         action="store_true",
-        help="If panel PNGs exist for a page, skip re-download (no manifest)",
+        help=(
+            "Skip a page when panel PNGs already exist on disk even if the manifest "
+            "does not record that page (unsafe if files are stale). When the manifest "
+            "says a page is done, on-disk files are required or the page is "
+            "re-fetched; if the chapter's source image name changed, panels are "
+            "re-downloaded."
+        ),
+    )
+    p.add_argument(
+        "--max-image-bytes",
+        type=int,
+        default=DEFAULT_MAX_IMAGE_BYTES,
+        metavar="N",
+        help=(
+            "Reject raw page payloads larger than this many bytes before decode "
+            f"(default: {DEFAULT_MAX_IMAGE_BYTES})"
+        ),
+    )
+    p.add_argument(
+        "--max-image-side",
+        type=int,
+        default=DEFAULT_MAX_IMAGE_SIDE,
+        metavar="PX",
+        help=(
+            "Reject decoded images whose width or height exceeds this "
+            f"(default: {DEFAULT_MAX_IMAGE_SIDE})"
+        ),
     )
     p.add_argument(
         "--min-panel-side",
@@ -185,6 +213,12 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
+    if int(args.max_image_bytes) < 1024:
+        print("--max-image-bytes must be at least 1024", file=sys.stderr)
+        return 2
+    if int(args.max_image_side) < 64:
+        print("--max-image-side must be at least 64", file=sys.stderr)
+        return 2
     logging.basicConfig(
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(levelname)s %(name)s %(message)s",
@@ -232,6 +266,8 @@ def main(argv: list[str] | None = None) -> int:
                 max_chapters=args.max_chapters,
                 max_pages_per_chapter=args.max_pages_per_chapter,
                 trust_existing=bool(args.trust_existing),
+                max_image_bytes=int(args.max_image_bytes),
+                max_image_side=int(args.max_image_side),
             )
 
     try:

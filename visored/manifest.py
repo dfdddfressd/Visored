@@ -3,10 +3,13 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import tempfile
 from dataclasses import asdict, dataclass, field
 from typing import Any
+
+log = logging.getLogger(__name__)
 
 
 @dataclass
@@ -56,7 +59,13 @@ def load_manifest(chapter_dir: str) -> ChapterManifest | None:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         return ChapterManifest.from_json_dict(data)
-    except (json.JSONDecodeError, KeyError, TypeError, ValueError):
+    except (json.JSONDecodeError, KeyError, TypeError, ValueError) as e:
+        log.warning(
+            "Ignoring unreadable manifest %s (%s); delete or repair this file to "
+            "resume safely.",
+            path,
+            e,
+        )
         return None
 
 

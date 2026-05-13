@@ -1,3 +1,4 @@
+README.md
 pyproject.toml
 tests/test_gutter_segment.py
 visored/__init__.py

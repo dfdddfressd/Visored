@@ -65,3 +65,14 @@ def test_legacy_segmentation_smoke() -> None:
         segmentation="legacy",
     )
     assert r["panel_count"] >= 1
+
+
+def test_rejects_oversized_payload() -> None:
+    img = np.full((50, 50, 3), 255, np.uint8)
+    blob = _encode_png_bgr(img)
+    try:
+        segment_page_from_bytes(blob, max_image_bytes=len(blob) - 1)
+    except ValueError as e:
+        assert "exceeds limit" in str(e)
+    else:
+        raise AssertionError("expected ValueError")

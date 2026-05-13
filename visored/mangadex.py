@@ -8,7 +8,7 @@ import random
 import time
 from collections.abc import AsyncIterator
 from typing import Any
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 
 import aiohttp
 from aiolimiter import AsyncLimiter
@@ -20,6 +20,28 @@ API_BASE = "https://api.mangadex.org"
 DEFAULT_MANGA_ID = "a460ab18-22c1-47eb-a08a-9ee85fe37ec8"
 
 log = logging.getLogger(__name__)
+
+
+def is_trusted_mangadex_https_url(url: str) -> bool:
+    """
+    Restrict outbound fetches to MangaDex-controlled hosts (mitigates redirect SSRF).
+    At-home baseUrl values are expected to use https on *.mangadex.org.
+    """
+    try:
+        p = urlparse(url)
+    except ValueError:
+        return False
+    if p.scheme != "https" or not p.netloc:
+        return False
+    host = p.hostname
+    if not host:
+        return False
+    host_l = host.lower()
+    if host_l == "mangadex.org" or host_l.endswith(".mangadex.org"):
+        return True
+    if host_l == "api.mangadex.org":
+        return True
+    return False
 
 
 def build_user_agent(
@@ -166,6 +188,8 @@ class MangaDexClient:
         )
 
     async def fetch_cdn_bytes(self, url: str) -> bytes:
+        if not is_trusted_mangadex_https_url(url):
+            raise RuntimeError(f"Refusing untrusted CDN URL host/scheme: {url!r}")
         delay = 1.0
         for _attempt in range(self._max_retries):
             async with self._cdn_sem:
@@ -173,7 +197,15 @@ class MangaDexClient:
                     async with self._session.get(
                         url,
                         headers={"User-Agent": self._user_agent},
+                        allow_redirects=True,
                     ) as resp:
+                        chain = list(resp.history) + [resp]
+                        for hop in chain:
+                            if not is_trusted_mangadex_https_url(str(hop.url)):
+                                raise RuntimeError(
+                                    "Refusing redirect to non-MangaDex URL: "
+                                    f"{hop.url!r}"
+                                )
                         if resp.status == 403:
                             body = await resp.text()
                             raise RuntimeError(f"CDN 403 {url} {body[:120]}")

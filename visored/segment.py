@@ -13,6 +13,10 @@ MIN_PANEL_SIDE = 150
 # If sum of detected panel areas is below this fraction of page, treat as full-bleed.
 MIN_COVERAGE_FRACTION = 0.15
 
+# Decode limits (remote images): bounds memory/CPU from decompression bombs.
+DEFAULT_MAX_IMAGE_BYTES = 80 * 1024 * 1024
+DEFAULT_MAX_IMAGE_SIDE = 8192
+
 SegmentationMode = Literal["gutter", "legacy"]
 
 # Gutter (recursive XY-cut) defaults
@@ -43,12 +47,23 @@ def segment_page_from_bytes(
     gutter_max_depth: int = DEFAULT_GUTTER_MAX_DEPTH,
     gutter_margin_frac: float = DEFAULT_GUTTER_MARGIN_FRAC,
     gutter_max_leaves: int = DEFAULT_GUTTER_MAX_LEAVES,
+    max_image_bytes: int = DEFAULT_MAX_IMAGE_BYTES,
+    max_image_side: int = DEFAULT_MAX_IMAGE_SIDE,
 ) -> SegmentResult:
     """Decode image and split into panel crops (gutter XY-cut or legacy contours)."""
+    if len(image_bytes) > max_image_bytes:
+        raise ValueError(
+            f"Image payload {len(image_bytes)} bytes exceeds limit {max_image_bytes}"
+        )
     arr = np.frombuffer(image_bytes, dtype=np.uint8)
     img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
     if img is None:
         raise ValueError("cv2.imdecode failed (invalid or corrupted image)")
+    h, w = int(img.shape[0]), int(img.shape[1])
+    if h > max_image_side or w > max_image_side:
+        raise ValueError(
+            f"Decoded image size {w}x{h} exceeds max side length {max_image_side}"
+        )
 
     if segmentation == "legacy":
         return _segment_legacy_from_bgr(
