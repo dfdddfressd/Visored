@@ -1,5 +1,6 @@
 """MangaDex API client: rate limits, pagination, at-home, CDN fetch."""
-
+#i was here lol 
+#______________
 from __future__ import annotations
 
 import asyncio
