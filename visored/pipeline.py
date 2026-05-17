@@ -369,7 +369,7 @@ async def _producer(
         if not is_trusted_mangadex_https_url(base_s):
             log.warning(
                 "Skipping chapter %s: untrusted at-home baseUrl %r "
-                "(expected https://*.mangadex.org)",
+                "(expected https://*.mangadex.org or https://*.mangadex.network)",
                 cid,
                 base_url,
             )

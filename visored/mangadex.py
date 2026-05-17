@@ -40,6 +40,8 @@ def is_trusted_mangadex_https_url(url: str) -> bool:
     host_l = host.lower()
     if host_l == "mangadex.org" or host_l.endswith(".mangadex.org"):
         return True
+    if host_l == "mangadex.network" or host_l.endswith(".mangadex.network"):
+        return True
     if host_l == "api.mangadex.org":
         return True
     return False
@@ -143,8 +145,13 @@ class MangaDexClient:
                                 await asyncio.sleep(delay + jitter)
                                 delay = min(delay * 2, 120.0)
                                 continue
+                            if resp.status == 503:
+                                await asyncio.sleep(delay + random.uniform(0, 0.5))
+                                delay = min(delay * 2, 120.0)
+                                continue
                             resp.raise_for_status()
                             return await resp.json()
+
                 else:
                     async with self._session.request(
                         method, url, headers=headers, **kwargs
@@ -220,8 +227,17 @@ class MangaDexClient:
                             await asyncio.sleep(delay + random.uniform(0, 0.3))
                             delay = min(delay * 2, 120.0)
                             continue
+                        if resp.status == 503:
+                            await asyncio.sleep(delay + random.uniform(0, 0.5))
+                            delay = min(delay * 2, 120.0)
+                            continue
+                        if resp.status == 503:
+                            await asyncio.sleep(delay + random.uniform(0, 0.5))
+                            delay = min(delay * 2, 120.0)
+                            continue
                         resp.raise_for_status()
                         return await resp.read()
+
                 except (aiohttp.ClientError, asyncio.TimeoutError):
                     await asyncio.sleep(delay + random.uniform(0, 0.3))
                     delay = min(delay * 2, 120.0)
