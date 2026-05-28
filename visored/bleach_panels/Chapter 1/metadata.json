@@ -1,0 +1,4706 @@
+[
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 1,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 2037,
+      "h": 3000
+    },
+    "file": "p001_panel01.jpg",
+    "source_page_file": "p001_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 2,
+    "panel": 1,
+    "bbox": {
+      "x": 100,
+      "y": 0,
+      "w": 1708,
+      "h": 501
+    },
+    "file": "p002_panel01.jpg",
+    "source_page_file": "p002_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 2,
+    "panel": 2,
+    "bbox": {
+      "x": 99,
+      "y": 560,
+      "w": 1713,
+      "h": 789
+    },
+    "file": "p002_panel02.jpg",
+    "source_page_file": "p002_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 2,
+    "panel": 3,
+    "bbox": {
+      "x": 0,
+      "y": 1407,
+      "w": 1810,
+      "h": 1593
+    },
+    "file": "p002_panel03.jpg",
+    "source_page_file": "p002_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 3,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 3871,
+      "h": 3000
+    },
+    "file": "p003_panel01.jpg",
+    "source_page_file": "p003_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 4,
+    "panel": 1,
+    "bbox": {
+      "x": 122,
+      "y": 0,
+      "w": 1813,
+      "h": 1753
+    },
+    "file": "p004_panel01.jpg",
+    "source_page_file": "p004_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 4,
+    "panel": 2,
+    "bbox": {
+      "x": 122,
+      "y": 1811,
+      "w": 1813,
+      "h": 594
+    },
+    "file": "p004_panel02.jpg",
+    "source_page_file": "p004_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 4,
+    "panel": 3,
+    "bbox": {
+      "x": 122,
+      "y": 2460,
+      "w": 1813,
+      "h": 540
+    },
+    "file": "p004_panel03.jpg",
+    "source_page_file": "p004_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 5,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1904,
+      "h": 1170
+    },
+    "file": "p005_panel01.jpg",
+    "source_page_file": "p005_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 5,
+    "panel": 2,
+    "bbox": {
+      "x": 959,
+      "y": 1225,
+      "w": 872,
+      "h": 537
+    },
+    "file": "p005_panel02.jpg",
+    "source_page_file": "p005_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 5,
+    "panel": 3,
+    "bbox": {
+      "x": 113,
+      "y": 1227,
+      "w": 840,
+      "h": 536
+    },
+    "file": "p005_panel03.jpg",
+    "source_page_file": "p005_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 5,
+    "panel": 4,
+    "bbox": {
+      "x": 1296,
+      "y": 1825,
+      "w": 536,
+      "h": 1175
+    },
+    "file": "p005_panel04.jpg",
+    "source_page_file": "p005_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 5,
+    "panel": 5,
+    "bbox": {
+      "x": 731,
+      "y": 1821,
+      "w": 558,
+      "h": 1179
+    },
+    "file": "p005_panel05.jpg",
+    "source_page_file": "p005_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 5,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 1825,
+      "w": 728,
+      "h": 1175
+    },
+    "file": "p005_panel06.jpg",
+    "source_page_file": "p005_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 6,
+    "panel": 1,
+    "bbox": {
+      "x": 1406,
+      "y": 0,
+      "w": 427,
+      "h": 943
+    },
+    "file": "p006_panel01.jpg",
+    "source_page_file": "p006_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 6,
+    "panel": 2,
+    "bbox": {
+      "x": 633,
+      "y": 0,
+      "w": 767,
+      "h": 944
+    },
+    "file": "p006_panel02.jpg",
+    "source_page_file": "p006_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 6,
+    "panel": 3,
+    "bbox": {
+      "x": 88,
+      "y": 0,
+      "w": 535,
+      "h": 946
+    },
+    "file": "p006_panel03.jpg",
+    "source_page_file": "p006_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 6,
+    "panel": 4,
+    "bbox": {
+      "x": 743,
+      "y": 953,
+      "w": 1192,
+      "h": 815
+    },
+    "file": "p006_panel04.jpg",
+    "source_page_file": "p006_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 6,
+    "panel": 5,
+    "bbox": {
+      "x": 89,
+      "y": 1007,
+      "w": 649,
+      "h": 762
+    },
+    "file": "p006_panel05.jpg",
+    "source_page_file": "p006_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 6,
+    "panel": 6,
+    "bbox": {
+      "x": 92,
+      "y": 1827,
+      "w": 1843,
+      "h": 1173
+    },
+    "file": "p006_panel06.jpg",
+    "source_page_file": "p006_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 7,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1893,
+      "h": 1449
+    },
+    "file": "p007_panel01.jpg",
+    "source_page_file": "p007_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 7,
+    "panel": 2,
+    "bbox": {
+      "x": 1216,
+      "y": 1506,
+      "w": 613,
+      "h": 1494
+    },
+    "file": "p007_panel02.jpg",
+    "source_page_file": "p007_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 7,
+    "panel": 3,
+    "bbox": {
+      "x": 798,
+      "y": 2107,
+      "w": 412,
+      "h": 893
+    },
+    "file": "p007_panel03.jpg",
+    "source_page_file": "p007_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 7,
+    "panel": 4,
+    "bbox": {
+      "x": 102,
+      "y": 1506,
+      "w": 1108,
+      "h": 541
+    },
+    "file": "p007_panel04.jpg",
+    "source_page_file": "p007_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 7,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 2107,
+      "w": 793,
+      "h": 893
+    },
+    "file": "p007_panel05.jpg",
+    "source_page_file": "p007_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 8,
+    "panel": 1,
+    "bbox": {
+      "x": 126,
+      "y": 0,
+      "w": 1809,
+      "h": 1726
+    },
+    "file": "p008_panel01.jpg",
+    "source_page_file": "p008_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 8,
+    "panel": 2,
+    "bbox": {
+      "x": 1503,
+      "y": 1784,
+      "w": 339,
+      "h": 1038
+    },
+    "file": "p008_panel02.jpg",
+    "source_page_file": "p008_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 8,
+    "panel": 3,
+    "bbox": {
+      "x": 126,
+      "y": 1738,
+      "w": 1373,
+      "h": 1262
+    },
+    "file": "p008_panel03.jpg",
+    "source_page_file": "p008_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 9,
+    "panel": 1,
+    "bbox": {
+      "x": 1016,
+      "y": 0,
+      "w": 847,
+      "h": 845
+    },
+    "file": "p009_panel01.jpg",
+    "source_page_file": "p009_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 9,
+    "panel": 2,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1014,
+      "h": 845
+    },
+    "file": "p009_panel02.jpg",
+    "source_page_file": "p009_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 9,
+    "panel": 3,
+    "bbox": {
+      "x": 0,
+      "y": 903,
+      "w": 1863,
+      "h": 612
+    },
+    "file": "p009_panel03.jpg",
+    "source_page_file": "p009_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 9,
+    "panel": 4,
+    "bbox": {
+      "x": 1185,
+      "y": 1578,
+      "w": 680,
+      "h": 1422
+    },
+    "file": "p009_panel04.jpg",
+    "source_page_file": "p009_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 9,
+    "panel": 5,
+    "bbox": {
+      "x": 127,
+      "y": 1579,
+      "w": 1053,
+      "h": 479
+    },
+    "file": "p009_panel05.jpg",
+    "source_page_file": "p009_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 9,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 2117,
+      "w": 1181,
+      "h": 883
+    },
+    "file": "p009_panel06.jpg",
+    "source_page_file": "p009_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 1,
+    "bbox": {
+      "x": 859,
+      "y": 181,
+      "w": 969,
+      "h": 454
+    },
+    "file": "p010_panel01.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 2,
+    "bbox": {
+      "x": 858,
+      "y": 698,
+      "w": 970,
+      "h": 417
+    },
+    "file": "p010_panel02.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 3,
+    "bbox": {
+      "x": 95,
+      "y": 0,
+      "w": 757,
+      "h": 1114
+    },
+    "file": "p010_panel03.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 4,
+    "bbox": {
+      "x": 1457,
+      "y": 1177,
+      "w": 370,
+      "h": 651
+    },
+    "file": "p010_panel04.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 5,
+    "bbox": {
+      "x": 96,
+      "y": 1177,
+      "w": 1356,
+      "h": 651
+    },
+    "file": "p010_panel05.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 6,
+    "bbox": {
+      "x": 1047,
+      "y": 1882,
+      "w": 888,
+      "h": 1118
+    },
+    "file": "p010_panel06.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 10,
+    "panel": 7,
+    "bbox": {
+      "x": 95,
+      "y": 1881,
+      "w": 944,
+      "h": 969
+    },
+    "file": "p010_panel07.jpg",
+    "source_page_file": "p010_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 11,
+    "panel": 1,
+    "bbox": {
+      "x": 85,
+      "y": 0,
+      "w": 1738,
+      "h": 925
+    },
+    "file": "p011_panel01.jpg",
+    "source_page_file": "p011_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 11,
+    "panel": 2,
+    "bbox": {
+      "x": 0,
+      "y": 988,
+      "w": 1824,
+      "h": 2012
+    },
+    "file": "p011_panel02.jpg",
+    "source_page_file": "p011_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 12,
+    "panel": 1,
+    "bbox": {
+      "x": 92,
+      "y": 0,
+      "w": 1843,
+      "h": 1887
+    },
+    "file": "p012_panel01.jpg",
+    "source_page_file": "p012_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 12,
+    "panel": 2,
+    "bbox": {
+      "x": 93,
+      "y": 1915,
+      "w": 1842,
+      "h": 413
+    },
+    "file": "p012_panel02.jpg",
+    "source_page_file": "p012_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 12,
+    "panel": 3,
+    "bbox": {
+      "x": 93,
+      "y": 2390,
+      "w": 1842,
+      "h": 610
+    },
+    "file": "p012_panel03.jpg",
+    "source_page_file": "p012_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 13,
+    "panel": 1,
+    "bbox": {
+      "x": 1457,
+      "y": 258,
+      "w": 359,
+      "h": 681
+    },
+    "file": "p013_panel01.jpg",
+    "source_page_file": "p013_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 13,
+    "panel": 2,
+    "bbox": {
+      "x": 116,
+      "y": 0,
+      "w": 1339,
+      "h": 938
+    },
+    "file": "p013_panel02.jpg",
+    "source_page_file": "p013_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 13,
+    "panel": 3,
+    "bbox": {
+      "x": 116,
+      "y": 997,
+      "w": 1697,
+      "h": 329
+    },
+    "file": "p013_panel03.jpg",
+    "source_page_file": "p013_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 13,
+    "panel": 4,
+    "bbox": {
+      "x": 0,
+      "y": 1385,
+      "w": 1813,
+      "h": 788
+    },
+    "file": "p013_panel04.jpg",
+    "source_page_file": "p013_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 13,
+    "panel": 5,
+    "bbox": {
+      "x": 931,
+      "y": 2228,
+      "w": 879,
+      "h": 772
+    },
+    "file": "p013_panel05.jpg",
+    "source_page_file": "p013_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 13,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 2227,
+      "w": 927,
+      "h": 773
+    },
+    "file": "p013_panel06.jpg",
+    "source_page_file": "p013_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 1,
+    "bbox": {
+      "x": 979,
+      "y": 0,
+      "w": 956,
+      "h": 774
+    },
+    "file": "p014_panel01.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 2,
+    "bbox": {
+      "x": 113,
+      "y": 0,
+      "w": 863,
+      "h": 773
+    },
+    "file": "p014_panel02.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 3,
+    "bbox": {
+      "x": 946,
+      "y": 833,
+      "w": 873,
+      "h": 525
+    },
+    "file": "p014_panel03.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 4,
+    "bbox": {
+      "x": 111,
+      "y": 832,
+      "w": 831,
+      "h": 525
+    },
+    "file": "p014_panel04.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 5,
+    "bbox": {
+      "x": 111,
+      "y": 1417,
+      "w": 1708,
+      "h": 331
+    },
+    "file": "p014_panel05.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 6,
+    "bbox": {
+      "x": 1595,
+      "y": 1805,
+      "w": 340,
+      "h": 993
+    },
+    "file": "p014_panel06.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 14,
+    "panel": 7,
+    "bbox": {
+      "x": 110,
+      "y": 1804,
+      "w": 1479,
+      "h": 1196
+    },
+    "file": "p014_panel07.jpg",
+    "source_page_file": "p014_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1840,
+      "h": 635
+    },
+    "file": "p015_panel01.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 2,
+    "bbox": {
+      "x": 1419,
+      "y": 639,
+      "w": 419,
+      "h": 675
+    },
+    "file": "p015_panel02.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 3,
+    "bbox": {
+      "x": 926,
+      "y": 652,
+      "w": 483,
+      "h": 655
+    },
+    "file": "p015_panel03.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 4,
+    "bbox": {
+      "x": 129,
+      "y": 667,
+      "w": 791,
+      "h": 640
+    },
+    "file": "p015_panel04.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1366,
+      "w": 1843,
+      "h": 503
+    },
+    "file": "p015_panel05.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 6,
+    "bbox": {
+      "x": 1365,
+      "y": 1931,
+      "w": 472,
+      "h": 871
+    },
+    "file": "p015_panel06.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 7,
+    "bbox": {
+      "x": 894,
+      "y": 1930,
+      "w": 466,
+      "h": 870
+    },
+    "file": "p015_panel07.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 15,
+    "panel": 8,
+    "bbox": {
+      "x": 128,
+      "y": 1928,
+      "w": 760,
+      "h": 1072
+    },
+    "file": "p015_panel08.jpg",
+    "source_page_file": "p015_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 16,
+    "panel": 1,
+    "bbox": {
+      "x": 990,
+      "y": 0,
+      "w": 945,
+      "h": 881
+    },
+    "file": "p016_panel01.jpg",
+    "source_page_file": "p016_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 16,
+    "panel": 2,
+    "bbox": {
+      "x": 103,
+      "y": 0,
+      "w": 881,
+      "h": 831
+    },
+    "file": "p016_panel02.jpg",
+    "source_page_file": "p016_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 16,
+    "panel": 3,
+    "bbox": {
+      "x": 103,
+      "y": 886,
+      "w": 1709,
+      "h": 384
+    },
+    "file": "p016_panel03.jpg",
+    "source_page_file": "p016_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 16,
+    "panel": 4,
+    "bbox": {
+      "x": 1231,
+      "y": 1332,
+      "w": 582,
+      "h": 243
+    },
+    "file": "p016_panel04.jpg",
+    "source_page_file": "p016_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 16,
+    "panel": 5,
+    "bbox": {
+      "x": 925,
+      "y": 1635,
+      "w": 1010,
+      "h": 1365
+    },
+    "file": "p016_panel05.jpg",
+    "source_page_file": "p016_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 16,
+    "panel": 6,
+    "bbox": {
+      "x": 102,
+      "y": 1329,
+      "w": 1169,
+      "h": 1671
+    },
+    "file": "p016_panel06.jpg",
+    "source_page_file": "p016_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 17,
+    "panel": 1,
+    "bbox": {
+      "x": 1312,
+      "y": 146,
+      "w": 498,
+      "h": 820
+    },
+    "file": "p017_panel01.jpg",
+    "source_page_file": "p017_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 17,
+    "panel": 2,
+    "bbox": {
+      "x": 108,
+      "y": 266,
+      "w": 1198,
+      "h": 730
+    },
+    "file": "p017_panel02.jpg",
+    "source_page_file": "p017_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 17,
+    "panel": 3,
+    "bbox": {
+      "x": 109,
+      "y": 1021,
+      "w": 1701,
+      "h": 603
+    },
+    "file": "p017_panel03.jpg",
+    "source_page_file": "p017_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 17,
+    "panel": 4,
+    "bbox": {
+      "x": 1289,
+      "y": 1670,
+      "w": 521,
+      "h": 1141
+    },
+    "file": "p017_panel04.jpg",
+    "source_page_file": "p017_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 17,
+    "panel": 5,
+    "bbox": {
+      "x": 1004,
+      "y": 1659,
+      "w": 277,
+      "h": 1152
+    },
+    "file": "p017_panel05.jpg",
+    "source_page_file": "p017_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 17,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 1619,
+      "w": 996,
+      "h": 1381
+    },
+    "file": "p017_panel06.jpg",
+    "source_page_file": "p017_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 18,
+    "panel": 1,
+    "bbox": {
+      "x": 119,
+      "y": 0,
+      "w": 1816,
+      "h": 922
+    },
+    "file": "p018_panel01.jpg",
+    "source_page_file": "p018_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 18,
+    "panel": 2,
+    "bbox": {
+      "x": 1472,
+      "y": 982,
+      "w": 352,
+      "h": 684
+    },
+    "file": "p018_panel02.jpg",
+    "source_page_file": "p018_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 18,
+    "panel": 3,
+    "bbox": {
+      "x": 945,
+      "y": 982,
+      "w": 524,
+      "h": 683
+    },
+    "file": "p018_panel03.jpg",
+    "source_page_file": "p018_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 18,
+    "panel": 4,
+    "bbox": {
+      "x": 119,
+      "y": 980,
+      "w": 824,
+      "h": 685
+    },
+    "file": "p018_panel04.jpg",
+    "source_page_file": "p018_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 18,
+    "panel": 5,
+    "bbox": {
+      "x": 118,
+      "y": 1724,
+      "w": 1817,
+      "h": 1276
+    },
+    "file": "p018_panel05.jpg",
+    "source_page_file": "p018_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 1,
+    "bbox": {
+      "x": 1445,
+      "y": 0,
+      "w": 377,
+      "h": 1004
+    },
+    "file": "p019_panel01.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 2,
+    "bbox": {
+      "x": 295,
+      "y": 0,
+      "w": 1139,
+      "h": 1003
+    },
+    "file": "p019_panel02.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 3,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 287,
+      "h": 999
+    },
+    "file": "p019_panel03.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 4,
+    "bbox": {
+      "x": 609,
+      "y": 1064,
+      "w": 1212,
+      "h": 807
+    },
+    "file": "p019_panel04.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 5,
+    "bbox": {
+      "x": 117,
+      "y": 1062,
+      "w": 483,
+      "h": 809
+    },
+    "file": "p019_panel05.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 6,
+    "bbox": {
+      "x": 1329,
+      "y": 1933,
+      "w": 492,
+      "h": 871
+    },
+    "file": "p019_panel06.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 19,
+    "panel": 7,
+    "bbox": {
+      "x": 116,
+      "y": 1929,
+      "w": 1204,
+      "h": 874
+    },
+    "file": "p019_panel07.jpg",
+    "source_page_file": "p019_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 20,
+    "panel": 1,
+    "bbox": {
+      "x": 977,
+      "y": 264,
+      "w": 839,
+      "h": 1090
+    },
+    "file": "p020_panel01.jpg",
+    "source_page_file": "p020_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 20,
+    "panel": 2,
+    "bbox": {
+      "x": 116,
+      "y": 263,
+      "w": 848,
+      "h": 1090
+    },
+    "file": "p020_panel02.jpg",
+    "source_page_file": "p020_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 20,
+    "panel": 3,
+    "bbox": {
+      "x": 1003,
+      "y": 1416,
+      "w": 814,
+      "h": 700
+    },
+    "file": "p020_panel03.jpg",
+    "source_page_file": "p020_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 20,
+    "panel": 4,
+    "bbox": {
+      "x": 116,
+      "y": 1415,
+      "w": 875,
+      "h": 700
+    },
+    "file": "p020_panel04.jpg",
+    "source_page_file": "p020_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 20,
+    "panel": 5,
+    "bbox": {
+      "x": 115,
+      "y": 2168,
+      "w": 1701,
+      "h": 645
+    },
+    "file": "p020_panel05.jpg",
+    "source_page_file": "p020_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 1,
+    "bbox": {
+      "x": 108,
+      "y": 260,
+      "w": 1708,
+      "h": 607
+    },
+    "file": "p021_panel01.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 2,
+    "bbox": {
+      "x": 107,
+      "y": 925,
+      "w": 1709,
+      "h": 639
+    },
+    "file": "p021_panel02.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 3,
+    "bbox": {
+      "x": 1246,
+      "y": 1623,
+      "w": 568,
+      "h": 436
+    },
+    "file": "p021_panel03.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 4,
+    "bbox": {
+      "x": 106,
+      "y": 1622,
+      "w": 1131,
+      "h": 437
+    },
+    "file": "p021_panel04.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 5,
+    "bbox": {
+      "x": 1176,
+      "y": 2119,
+      "w": 636,
+      "h": 881
+    },
+    "file": "p021_panel05.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 6,
+    "bbox": {
+      "x": 312,
+      "y": 2118,
+      "w": 852,
+      "h": 882
+    },
+    "file": "p021_panel06.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 21,
+    "panel": 7,
+    "bbox": {
+      "x": 0,
+      "y": 2116,
+      "w": 306,
+      "h": 884
+    },
+    "file": "p021_panel07.jpg",
+    "source_page_file": "p021_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 1,
+    "bbox": {
+      "x": 125,
+      "y": 0,
+      "w": 1810,
+      "h": 976
+    },
+    "file": "p022_panel01.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 2,
+    "bbox": {
+      "x": 1442,
+      "y": 1031,
+      "w": 391,
+      "h": 747
+    },
+    "file": "p022_panel02.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 3,
+    "bbox": {
+      "x": 643,
+      "y": 1031,
+      "w": 791,
+      "h": 747
+    },
+    "file": "p022_panel03.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 4,
+    "bbox": {
+      "x": 125,
+      "y": 1031,
+      "w": 508,
+      "h": 747
+    },
+    "file": "p022_panel04.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 5,
+    "bbox": {
+      "x": 1466,
+      "y": 1837,
+      "w": 469,
+      "h": 960
+    },
+    "file": "p022_panel05.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 6,
+    "bbox": {
+      "x": 559,
+      "y": 2496,
+      "w": 446,
+      "h": 504
+    },
+    "file": "p022_panel06.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 22,
+    "panel": 7,
+    "bbox": {
+      "x": 125,
+      "y": 1836,
+      "w": 1403,
+      "h": 1164
+    },
+    "file": "p022_panel07.jpg",
+    "source_page_file": "p022_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 1,
+    "bbox": {
+      "x": 812,
+      "y": 0,
+      "w": 1009,
+      "h": 744
+    },
+    "file": "p023_panel01.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 2,
+    "bbox": {
+      "x": 114,
+      "y": 0,
+      "w": 774,
+      "h": 744
+    },
+    "file": "p023_panel02.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 3,
+    "bbox": {
+      "x": 1348,
+      "y": 806,
+      "w": 472,
+      "h": 1112
+    },
+    "file": "p023_panel03.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 4,
+    "bbox": {
+      "x": 0,
+      "y": 806,
+      "w": 1335,
+      "h": 1111
+    },
+    "file": "p023_panel04.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 5,
+    "bbox": {
+      "x": 1196,
+      "y": 1981,
+      "w": 623,
+      "h": 827
+    },
+    "file": "p023_panel05.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 6,
+    "bbox": {
+      "x": 925,
+      "y": 1980,
+      "w": 412,
+      "h": 827
+    },
+    "file": "p023_panel06.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 23,
+    "panel": 7,
+    "bbox": {
+      "x": 113,
+      "y": 1980,
+      "w": 842,
+      "h": 828
+    },
+    "file": "p023_panel07.jpg",
+    "source_page_file": "p023_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 24,
+    "panel": 1,
+    "bbox": {
+      "x": 1068,
+      "y": 0,
+      "w": 867,
+      "h": 916
+    },
+    "file": "p024_panel01.jpg",
+    "source_page_file": "p024_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 24,
+    "panel": 2,
+    "bbox": {
+      "x": 93,
+      "y": 0,
+      "w": 1164,
+      "h": 915
+    },
+    "file": "p024_panel02.jpg",
+    "source_page_file": "p024_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 24,
+    "panel": 3,
+    "bbox": {
+      "x": 93,
+      "y": 970,
+      "w": 1733,
+      "h": 653
+    },
+    "file": "p024_panel03.jpg",
+    "source_page_file": "p024_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 24,
+    "panel": 4,
+    "bbox": {
+      "x": 652,
+      "y": 1576,
+      "w": 1283,
+      "h": 1424
+    },
+    "file": "p024_panel04.jpg",
+    "source_page_file": "p024_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 24,
+    "panel": 5,
+    "bbox": {
+      "x": 91,
+      "y": 1654,
+      "w": 616,
+      "h": 1199
+    },
+    "file": "p024_panel05.jpg",
+    "source_page_file": "p024_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 25,
+    "panel": 1,
+    "bbox": {
+      "x": 1445,
+      "y": 0,
+      "w": 388,
+      "h": 865
+    },
+    "file": "p025_panel01.jpg",
+    "source_page_file": "p025_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 25,
+    "panel": 2,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1436,
+      "h": 866
+    },
+    "file": "p025_panel02.jpg",
+    "source_page_file": "p025_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 25,
+    "panel": 3,
+    "bbox": {
+      "x": 0,
+      "y": 923,
+      "w": 1832,
+      "h": 1054
+    },
+    "file": "p025_panel03.jpg",
+    "source_page_file": "p025_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 25,
+    "panel": 4,
+    "bbox": {
+      "x": 1230,
+      "y": 2036,
+      "w": 601,
+      "h": 964
+    },
+    "file": "p025_panel04.jpg",
+    "source_page_file": "p025_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 25,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 2036,
+      "w": 1217,
+      "h": 893
+    },
+    "file": "p025_panel05.jpg",
+    "source_page_file": "p025_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 26,
+    "panel": 1,
+    "bbox": {
+      "x": 127,
+      "y": 0,
+      "w": 1808,
+      "h": 984
+    },
+    "file": "p026_panel01.jpg",
+    "source_page_file": "p026_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 26,
+    "panel": 2,
+    "bbox": {
+      "x": 1450,
+      "y": 2454,
+      "w": 416,
+      "h": 369
+    },
+    "file": "p026_panel02.jpg",
+    "source_page_file": "p026_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 26,
+    "panel": 3,
+    "bbox": {
+      "x": 1235,
+      "y": 1038,
+      "w": 700,
+      "h": 721
+    },
+    "file": "p026_panel03.jpg",
+    "source_page_file": "p026_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 26,
+    "panel": 4,
+    "bbox": {
+      "x": 126,
+      "y": 1035,
+      "w": 1809,
+      "h": 1965
+    },
+    "file": "p026_panel04.jpg",
+    "source_page_file": "p026_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 27,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1839,
+      "h": 1350
+    },
+    "file": "p027_panel01.jpg",
+    "source_page_file": "p027_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 27,
+    "panel": 2,
+    "bbox": {
+      "x": 0,
+      "y": 1409,
+      "w": 1839,
+      "h": 446
+    },
+    "file": "p027_panel02.jpg",
+    "source_page_file": "p027_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 27,
+    "panel": 3,
+    "bbox": {
+      "x": 1472,
+      "y": 1918,
+      "w": 367,
+      "h": 877
+    },
+    "file": "p027_panel03.jpg",
+    "source_page_file": "p027_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 27,
+    "panel": 4,
+    "bbox": {
+      "x": 554,
+      "y": 1918,
+      "w": 942,
+      "h": 877
+    },
+    "file": "p027_panel04.jpg",
+    "source_page_file": "p027_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 27,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1915,
+      "w": 602,
+      "h": 879
+    },
+    "file": "p027_panel05.jpg",
+    "source_page_file": "p027_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 28,
+    "panel": 1,
+    "bbox": {
+      "x": 513,
+      "y": 251,
+      "w": 1308,
+      "h": 799
+    },
+    "file": "p028_panel01.jpg",
+    "source_page_file": "p028_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 28,
+    "panel": 2,
+    "bbox": {
+      "x": 123,
+      "y": 252,
+      "w": 527,
+      "h": 798
+    },
+    "file": "p028_panel02.jpg",
+    "source_page_file": "p028_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 28,
+    "panel": 3,
+    "bbox": {
+      "x": 123,
+      "y": 1108,
+      "w": 1812,
+      "h": 738
+    },
+    "file": "p028_panel03.jpg",
+    "source_page_file": "p028_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 28,
+    "panel": 4,
+    "bbox": {
+      "x": 1361,
+      "y": 2356,
+      "w": 539,
+      "h": 481
+    },
+    "file": "p028_panel04.jpg",
+    "source_page_file": "p028_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 28,
+    "panel": 5,
+    "bbox": {
+      "x": 1327,
+      "y": 1907,
+      "w": 496,
+      "h": 422
+    },
+    "file": "p028_panel05.jpg",
+    "source_page_file": "p028_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 28,
+    "panel": 6,
+    "bbox": {
+      "x": 122,
+      "y": 1906,
+      "w": 1277,
+      "h": 1094
+    },
+    "file": "p028_panel06.jpg",
+    "source_page_file": "p028_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 29,
+    "panel": 1,
+    "bbox": {
+      "x": 1220,
+      "y": 252,
+      "w": 608,
+      "h": 672
+    },
+    "file": "p029_panel01.jpg",
+    "source_page_file": "p029_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 29,
+    "panel": 2,
+    "bbox": {
+      "x": 866,
+      "y": 252,
+      "w": 410,
+      "h": 671
+    },
+    "file": "p029_panel02.jpg",
+    "source_page_file": "p029_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 29,
+    "panel": 3,
+    "bbox": {
+      "x": 118,
+      "y": 252,
+      "w": 787,
+      "h": 671
+    },
+    "file": "p029_panel03.jpg",
+    "source_page_file": "p029_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 29,
+    "panel": 4,
+    "bbox": {
+      "x": 118,
+      "y": 981,
+      "w": 1710,
+      "h": 470
+    },
+    "file": "p029_panel04.jpg",
+    "source_page_file": "p029_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 29,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1510,
+      "w": 1830,
+      "h": 1490
+    },
+    "file": "p029_panel05.jpg",
+    "source_page_file": "p029_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 30,
+    "panel": 1,
+    "bbox": {
+      "x": 123,
+      "y": 0,
+      "w": 1812,
+      "h": 1493
+    },
+    "file": "p030_panel01.jpg",
+    "source_page_file": "p030_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 30,
+    "panel": 2,
+    "bbox": {
+      "x": 122,
+      "y": 1550,
+      "w": 1813,
+      "h": 466
+    },
+    "file": "p030_panel02.jpg",
+    "source_page_file": "p030_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 30,
+    "panel": 3,
+    "bbox": {
+      "x": 1374,
+      "y": 2074,
+      "w": 455,
+      "h": 728
+    },
+    "file": "p030_panel03.jpg",
+    "source_page_file": "p030_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 30,
+    "panel": 4,
+    "bbox": {
+      "x": 121,
+      "y": 2071,
+      "w": 1246,
+      "h": 929
+    },
+    "file": "p030_panel04.jpg",
+    "source_page_file": "p030_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 31,
+    "panel": 1,
+    "bbox": {
+      "x": 1282,
+      "y": 0,
+      "w": 561,
+      "h": 1511
+    },
+    "file": "p031_panel01.jpg",
+    "source_page_file": "p031_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 31,
+    "panel": 2,
+    "bbox": {
+      "x": 806,
+      "y": 887,
+      "w": 469,
+      "h": 601
+    },
+    "file": "p031_panel02.jpg",
+    "source_page_file": "p031_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 31,
+    "panel": 3,
+    "bbox": {
+      "x": 134,
+      "y": 893,
+      "w": 740,
+      "h": 596
+    },
+    "file": "p031_panel03.jpg",
+    "source_page_file": "p031_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 31,
+    "panel": 4,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1277,
+      "h": 849
+    },
+    "file": "p031_panel04.jpg",
+    "source_page_file": "p031_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 31,
+    "panel": 5,
+    "bbox": {
+      "x": 1021,
+      "y": 1547,
+      "w": 822,
+      "h": 539
+    },
+    "file": "p031_panel05.jpg",
+    "source_page_file": "p031_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 31,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 1551,
+      "w": 1844,
+      "h": 1449
+    },
+    "file": "p031_panel06.jpg",
+    "source_page_file": "p031_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 32,
+    "panel": 1,
+    "bbox": {
+      "x": 1451,
+      "y": 0,
+      "w": 484,
+      "h": 1216
+    },
+    "file": "p032_panel01.jpg",
+    "source_page_file": "p032_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 32,
+    "panel": 2,
+    "bbox": {
+      "x": 965,
+      "y": 0,
+      "w": 475,
+      "h": 1216
+    },
+    "file": "p032_panel02.jpg",
+    "source_page_file": "p032_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 32,
+    "panel": 3,
+    "bbox": {
+      "x": 111,
+      "y": 0,
+      "w": 847,
+      "h": 1216
+    },
+    "file": "p032_panel03.jpg",
+    "source_page_file": "p032_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 32,
+    "panel": 4,
+    "bbox": {
+      "x": 1393,
+      "y": 1274,
+      "w": 542,
+      "h": 1040
+    },
+    "file": "p032_panel04.jpg",
+    "source_page_file": "p032_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 32,
+    "panel": 5,
+    "bbox": {
+      "x": 111,
+      "y": 1273,
+      "w": 1429,
+      "h": 1141
+    },
+    "file": "p032_panel05.jpg",
+    "source_page_file": "p032_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 32,
+    "panel": 6,
+    "bbox": {
+      "x": 113,
+      "y": 2347,
+      "w": 1822,
+      "h": 653
+    },
+    "file": "p032_panel06.jpg",
+    "source_page_file": "p032_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 33,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1822,
+      "h": 1066
+    },
+    "file": "p033_panel01.jpg",
+    "source_page_file": "p033_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 33,
+    "panel": 2,
+    "bbox": {
+      "x": 1267,
+      "y": 1832,
+      "w": 557,
+      "h": 532
+    },
+    "file": "p033_panel02.jpg",
+    "source_page_file": "p033_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 33,
+    "panel": 3,
+    "bbox": {
+      "x": 1215,
+      "y": 991,
+      "w": 609,
+      "h": 834
+    },
+    "file": "p033_panel03.jpg",
+    "source_page_file": "p033_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 33,
+    "panel": 4,
+    "bbox": {
+      "x": 974,
+      "y": 1038,
+      "w": 319,
+      "h": 1325
+    },
+    "file": "p033_panel04.jpg",
+    "source_page_file": "p033_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 33,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1053,
+      "w": 1014,
+      "h": 1310
+    },
+    "file": "p033_panel05.jpg",
+    "source_page_file": "p033_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 33,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 2391,
+      "w": 1862,
+      "h": 609
+    },
+    "file": "p033_panel06.jpg",
+    "source_page_file": "p033_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 1,
+    "bbox": {
+      "x": 1444,
+      "y": 876,
+      "w": 491,
+      "h": 267
+    },
+    "file": "p034_panel01.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 2,
+    "bbox": {
+      "x": 1371,
+      "y": 106,
+      "w": 564,
+      "h": 1087
+    },
+    "file": "p034_panel02.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 3,
+    "bbox": {
+      "x": 152,
+      "y": 435,
+      "w": 353,
+      "h": 920
+    },
+    "file": "p034_panel03.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 4,
+    "bbox": {
+      "x": 127,
+      "y": 0,
+      "w": 1700,
+      "h": 1219
+    },
+    "file": "p034_panel04.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 5,
+    "bbox": {
+      "x": 1372,
+      "y": 1183,
+      "w": 462,
+      "h": 700
+    },
+    "file": "p034_panel05.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 6,
+    "bbox": {
+      "x": 931,
+      "y": 1203,
+      "w": 545,
+      "h": 658
+    },
+    "file": "p034_panel06.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 7,
+    "bbox": {
+      "x": 128,
+      "y": 1237,
+      "w": 876,
+      "h": 607
+    },
+    "file": "p034_panel07.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 8,
+    "bbox": {
+      "x": 1469,
+      "y": 1929,
+      "w": 466,
+      "h": 1071
+    },
+    "file": "p034_panel08.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 9,
+    "bbox": {
+      "x": 1116,
+      "y": 1909,
+      "w": 407,
+      "h": 1091
+    },
+    "file": "p034_panel09.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 34,
+    "panel": 10,
+    "bbox": {
+      "x": 113,
+      "y": 1863,
+      "w": 1168,
+      "h": 1137
+    },
+    "file": "p034_panel10.jpg",
+    "source_page_file": "p034_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 1,
+    "bbox": {
+      "x": 1468,
+      "y": 254,
+      "w": 349,
+      "h": 824
+    },
+    "file": "p035_panel01.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 2,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1464,
+      "h": 1077
+    },
+    "file": "p035_panel02.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 3,
+    "bbox": {
+      "x": 1382,
+      "y": 1142,
+      "w": 435,
+      "h": 659
+    },
+    "file": "p035_panel03.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 4,
+    "bbox": {
+      "x": 111,
+      "y": 1139,
+      "w": 1269,
+      "h": 662
+    },
+    "file": "p035_panel04.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 5,
+    "bbox": {
+      "x": 1292,
+      "y": 1862,
+      "w": 523,
+      "h": 945
+    },
+    "file": "p035_panel05.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 6,
+    "bbox": {
+      "x": 970,
+      "y": 1862,
+      "w": 314,
+      "h": 945
+    },
+    "file": "p035_panel06.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 35,
+    "panel": 7,
+    "bbox": {
+      "x": 0,
+      "y": 1858,
+      "w": 964,
+      "h": 1142
+    },
+    "file": "p035_panel07.jpg",
+    "source_page_file": "p035_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 1,
+    "bbox": {
+      "x": 126,
+      "y": 0,
+      "w": 1809,
+      "h": 1116
+    },
+    "file": "p036_panel01.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 2,
+    "bbox": {
+      "x": 1269,
+      "y": 1180,
+      "w": 562,
+      "h": 470
+    },
+    "file": "p036_panel02.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 3,
+    "bbox": {
+      "x": 124,
+      "y": 1178,
+      "w": 1153,
+      "h": 472
+    },
+    "file": "p036_panel03.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 4,
+    "bbox": {
+      "x": 1641,
+      "y": 1710,
+      "w": 294,
+      "h": 1098
+    },
+    "file": "p036_panel04.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 5,
+    "bbox": {
+      "x": 1133,
+      "y": 1708,
+      "w": 505,
+      "h": 1099
+    },
+    "file": "p036_panel05.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 6,
+    "bbox": {
+      "x": 914,
+      "y": 1708,
+      "w": 211,
+      "h": 1097
+    },
+    "file": "p036_panel06.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 36,
+    "panel": 7,
+    "bbox": {
+      "x": 123,
+      "y": 1705,
+      "w": 783,
+      "h": 1295
+    },
+    "file": "p036_panel07.jpg",
+    "source_page_file": "p036_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 37,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1893,
+      "h": 1817
+    },
+    "file": "p037_panel01.jpg",
+    "source_page_file": "p037_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 37,
+    "panel": 2,
+    "bbox": {
+      "x": 712,
+      "y": 1857,
+      "w": 1100,
+      "h": 935
+    },
+    "file": "p037_panel02.jpg",
+    "source_page_file": "p037_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 37,
+    "panel": 3,
+    "bbox": {
+      "x": 709,
+      "y": 1869,
+      "w": 301,
+      "h": 441
+    },
+    "file": "p037_panel03.jpg",
+    "source_page_file": "p037_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 37,
+    "panel": 4,
+    "bbox": {
+      "x": 116,
+      "y": 1873,
+      "w": 586,
+      "h": 1127
+    },
+    "file": "p037_panel04.jpg",
+    "source_page_file": "p037_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 38,
+    "panel": 1,
+    "bbox": {
+      "x": 1399,
+      "y": 250,
+      "w": 425,
+      "h": 722
+    },
+    "file": "p038_panel01.jpg",
+    "source_page_file": "p038_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 38,
+    "panel": 2,
+    "bbox": {
+      "x": 943,
+      "y": 250,
+      "w": 509,
+      "h": 723
+    },
+    "file": "p038_panel02.jpg",
+    "source_page_file": "p038_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 38,
+    "panel": 3,
+    "bbox": {
+      "x": 112,
+      "y": 0,
+      "w": 831,
+      "h": 974
+    },
+    "file": "p038_panel03.jpg",
+    "source_page_file": "p038_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 38,
+    "panel": 4,
+    "bbox": {
+      "x": 111,
+      "y": 1035,
+      "w": 1824,
+      "h": 1062
+    },
+    "file": "p038_panel04.jpg",
+    "source_page_file": "p038_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 38,
+    "panel": 5,
+    "bbox": {
+      "x": 962,
+      "y": 2157,
+      "w": 861,
+      "h": 656
+    },
+    "file": "p038_panel05.jpg",
+    "source_page_file": "p038_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 38,
+    "panel": 6,
+    "bbox": {
+      "x": 112,
+      "y": 2157,
+      "w": 844,
+      "h": 656
+    },
+    "file": "p038_panel06.jpg",
+    "source_page_file": "p038_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 39,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1812,
+      "h": 1199
+    },
+    "file": "p039_panel01.jpg",
+    "source_page_file": "p039_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 39,
+    "panel": 2,
+    "bbox": {
+      "x": 1191,
+      "y": 1257,
+      "w": 622,
+      "h": 584
+    },
+    "file": "p039_panel02.jpg",
+    "source_page_file": "p039_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 39,
+    "panel": 3,
+    "bbox": {
+      "x": 770,
+      "y": 1257,
+      "w": 455,
+      "h": 618
+    },
+    "file": "p039_panel03.jpg",
+    "source_page_file": "p039_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 39,
+    "panel": 4,
+    "bbox": {
+      "x": 0,
+      "y": 1256,
+      "w": 831,
+      "h": 675
+    },
+    "file": "p039_panel04.jpg",
+    "source_page_file": "p039_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 39,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1860,
+      "w": 1812,
+      "h": 545
+    },
+    "file": "p039_panel05.jpg",
+    "source_page_file": "p039_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 39,
+    "panel": 6,
+    "bbox": {
+      "x": 0,
+      "y": 2339,
+      "w": 1893,
+      "h": 661
+    },
+    "file": "p039_panel06.jpg",
+    "source_page_file": "p039_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 40,
+    "panel": 1,
+    "bbox": {
+      "x": 113,
+      "y": 0,
+      "w": 1708,
+      "h": 276
+    },
+    "file": "p040_panel01.jpg",
+    "source_page_file": "p040_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 40,
+    "panel": 2,
+    "bbox": {
+      "x": 113,
+      "y": 319,
+      "w": 1822,
+      "h": 1278
+    },
+    "file": "p040_panel02.jpg",
+    "source_page_file": "p040_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 40,
+    "panel": 3,
+    "bbox": {
+      "x": 1536,
+      "y": 1657,
+      "w": 399,
+      "h": 1343
+    },
+    "file": "p040_panel03.jpg",
+    "source_page_file": "p040_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 40,
+    "panel": 4,
+    "bbox": {
+      "x": 113,
+      "y": 2477,
+      "w": 1414,
+      "h": 523
+    },
+    "file": "p040_panel04.jpg",
+    "source_page_file": "p040_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 40,
+    "panel": 5,
+    "bbox": {
+      "x": 112,
+      "y": 1622,
+      "w": 1415,
+      "h": 826
+    },
+    "file": "p040_panel05.jpg",
+    "source_page_file": "p040_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 1,
+    "bbox": {
+      "x": 401,
+      "y": 99,
+      "w": 1412,
+      "h": 791
+    },
+    "file": "p041_panel01.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 2,
+    "bbox": {
+      "x": 113,
+      "y": 256,
+      "w": 281,
+      "h": 634
+    },
+    "file": "p041_panel02.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 3,
+    "bbox": {
+      "x": 1354,
+      "y": 942,
+      "w": 460,
+      "h": 1293
+    },
+    "file": "p041_panel03.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 4,
+    "bbox": {
+      "x": 0,
+      "y": 944,
+      "w": 1348,
+      "h": 859
+    },
+    "file": "p041_panel04.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1863,
+      "w": 1350,
+      "h": 371
+    },
+    "file": "p041_panel05.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 6,
+    "bbox": {
+      "x": 1297,
+      "y": 2289,
+      "w": 516,
+      "h": 711
+    },
+    "file": "p041_panel06.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 7,
+    "bbox": {
+      "x": 733,
+      "y": 2291,
+      "w": 564,
+      "h": 709
+    },
+    "file": "p041_panel07.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 8,
+    "bbox": {
+      "x": 461,
+      "y": 2291,
+      "w": 265,
+      "h": 709
+    },
+    "file": "p041_panel08.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 9,
+    "bbox": {
+      "x": 16,
+      "y": 2375,
+      "w": 381,
+      "h": 550
+    },
+    "file": "p041_panel09.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 41,
+    "panel": 10,
+    "bbox": {
+      "x": 0,
+      "y": 2291,
+      "w": 455,
+      "h": 709
+    },
+    "file": "p041_panel10.jpg",
+    "source_page_file": "p041_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 42,
+    "panel": 1,
+    "bbox": {
+      "x": 1006,
+      "y": 269,
+      "w": 828,
+      "h": 615
+    },
+    "file": "p042_panel01.jpg",
+    "source_page_file": "p042_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 42,
+    "panel": 2,
+    "bbox": {
+      "x": 137,
+      "y": 267,
+      "w": 901,
+      "h": 617
+    },
+    "file": "p042_panel02.jpg",
+    "source_page_file": "p042_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 42,
+    "panel": 3,
+    "bbox": {
+      "x": 1529,
+      "y": 946,
+      "w": 406,
+      "h": 659
+    },
+    "file": "p042_panel03.jpg",
+    "source_page_file": "p042_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 42,
+    "panel": 4,
+    "bbox": {
+      "x": 136,
+      "y": 944,
+      "w": 1540,
+      "h": 662
+    },
+    "file": "p042_panel04.jpg",
+    "source_page_file": "p042_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 42,
+    "panel": 5,
+    "bbox": {
+      "x": 675,
+      "y": 1664,
+      "w": 1260,
+      "h": 1336
+    },
+    "file": "p042_panel05.jpg",
+    "source_page_file": "p042_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 42,
+    "panel": 6,
+    "bbox": {
+      "x": 135,
+      "y": 1663,
+      "w": 627,
+      "h": 1337
+    },
+    "file": "p042_panel06.jpg",
+    "source_page_file": "p042_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 1,
+    "bbox": {
+      "x": 1244,
+      "y": 0,
+      "w": 586,
+      "h": 1239
+    },
+    "file": "p043_panel01.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 2,
+    "bbox": {
+      "x": 931,
+      "y": 260,
+      "w": 305,
+      "h": 979
+    },
+    "file": "p043_panel02.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 3,
+    "bbox": {
+      "x": 129,
+      "y": 260,
+      "w": 820,
+      "h": 1003
+    },
+    "file": "p043_panel03.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 4,
+    "bbox": {
+      "x": 1201,
+      "y": 1300,
+      "w": 628,
+      "h": 632
+    },
+    "file": "p043_panel04.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 5,
+    "bbox": {
+      "x": 0,
+      "y": 1300,
+      "w": 1192,
+      "h": 633
+    },
+    "file": "p043_panel05.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 6,
+    "bbox": {
+      "x": 611,
+      "y": 1993,
+      "w": 1218,
+      "h": 911
+    },
+    "file": "p043_panel06.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 43,
+    "panel": 7,
+    "bbox": {
+      "x": 0,
+      "y": 1993,
+      "w": 604,
+      "h": 957
+    },
+    "file": "p043_panel07.jpg",
+    "source_page_file": "p043_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 44,
+    "panel": 1,
+    "bbox": {
+      "x": 102,
+      "y": 0,
+      "w": 1711,
+      "h": 455
+    },
+    "file": "p044_panel01.jpg",
+    "source_page_file": "p044_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 44,
+    "panel": 2,
+    "bbox": {
+      "x": 1010,
+      "y": 472,
+      "w": 803,
+      "h": 639
+    },
+    "file": "p044_panel02.jpg",
+    "source_page_file": "p044_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 44,
+    "panel": 3,
+    "bbox": {
+      "x": 101,
+      "y": 474,
+      "w": 898,
+      "h": 637
+    },
+    "file": "p044_panel03.jpg",
+    "source_page_file": "p044_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 44,
+    "panel": 4,
+    "bbox": {
+      "x": 101,
+      "y": 1163,
+      "w": 1712,
+      "h": 455
+    },
+    "file": "p044_panel04.jpg",
+    "source_page_file": "p044_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 44,
+    "panel": 5,
+    "bbox": {
+      "x": 101,
+      "y": 1678,
+      "w": 1834,
+      "h": 1322
+    },
+    "file": "p044_panel05.jpg",
+    "source_page_file": "p044_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1834,
+      "h": 566
+    },
+    "file": "p045_panel01.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 2,
+    "bbox": {
+      "x": 1455,
+      "y": 625,
+      "w": 380,
+      "h": 743
+    },
+    "file": "p045_panel02.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 3,
+    "bbox": {
+      "x": 810,
+      "y": 625,
+      "w": 638,
+      "h": 743
+    },
+    "file": "p045_panel03.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 4,
+    "bbox": {
+      "x": 113,
+      "y": 625,
+      "w": 691,
+      "h": 743
+    },
+    "file": "p045_panel04.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 5,
+    "bbox": {
+      "x": 1418,
+      "y": 1422,
+      "w": 416,
+      "h": 1403
+    },
+    "file": "p045_panel05.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 6,
+    "bbox": {
+      "x": 645,
+      "y": 1422,
+      "w": 767,
+      "h": 1578
+    },
+    "file": "p045_panel06.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 7,
+    "bbox": {
+      "x": 0,
+      "y": 1421,
+      "w": 638,
+      "h": 953
+    },
+    "file": "p045_panel07.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 45,
+    "panel": 8,
+    "bbox": {
+      "x": 0,
+      "y": 2459,
+      "w": 639,
+      "h": 541
+    },
+    "file": "p045_panel08.jpg",
+    "source_page_file": "p045_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 46,
+    "panel": 1,
+    "bbox": {
+      "x": 118,
+      "y": 0,
+      "w": 1817,
+      "h": 857
+    },
+    "file": "p046_panel01.jpg",
+    "source_page_file": "p046_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 46,
+    "panel": 2,
+    "bbox": {
+      "x": 118,
+      "y": 918,
+      "w": 1817,
+      "h": 758
+    },
+    "file": "p046_panel02.jpg",
+    "source_page_file": "p046_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 46,
+    "panel": 3,
+    "bbox": {
+      "x": 118,
+      "y": 1737,
+      "w": 1003,
+      "h": 547
+    },
+    "file": "p046_panel03.jpg",
+    "source_page_file": "p046_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 46,
+    "panel": 4,
+    "bbox": {
+      "x": 1126,
+      "y": 1738,
+      "w": 700,
+      "h": 1262
+    },
+    "file": "p046_panel04.jpg",
+    "source_page_file": "p046_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 46,
+    "panel": 5,
+    "bbox": {
+      "x": 121,
+      "y": 2344,
+      "w": 1000,
+      "h": 461
+    },
+    "file": "p046_panel05.jpg",
+    "source_page_file": "p046_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 1,
+    "bbox": {
+      "x": 94,
+      "y": 256,
+      "w": 1733,
+      "h": 755
+    },
+    "file": "p047_panel01.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 2,
+    "bbox": {
+      "x": 94,
+      "y": 1053,
+      "w": 1733,
+      "h": 313
+    },
+    "file": "p047_panel02.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 3,
+    "bbox": {
+      "x": 0,
+      "y": 1406,
+      "w": 1828,
+      "h": 548
+    },
+    "file": "p047_panel03.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 4,
+    "bbox": {
+      "x": 1231,
+      "y": 2011,
+      "w": 595,
+      "h": 839
+    },
+    "file": "p047_panel04.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 5,
+    "bbox": {
+      "x": 684,
+      "y": 2011,
+      "w": 542,
+      "h": 545
+    },
+    "file": "p047_panel05.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 6,
+    "bbox": {
+      "x": 684,
+      "y": 2554,
+      "w": 541,
+      "h": 446
+    },
+    "file": "p047_panel06.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 47,
+    "panel": 7,
+    "bbox": {
+      "x": 0,
+      "y": 2011,
+      "w": 676,
+      "h": 989
+    },
+    "file": "p047_panel07.jpg",
+    "source_page_file": "p047_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 48,
+    "panel": 1,
+    "bbox": {
+      "x": 1685,
+      "y": 0,
+      "w": 250,
+      "h": 694
+    },
+    "file": "p048_panel01.jpg",
+    "source_page_file": "p048_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 48,
+    "panel": 2,
+    "bbox": {
+      "x": 86,
+      "y": 0,
+      "w": 1849,
+      "h": 984
+    },
+    "file": "p048_panel02.jpg",
+    "source_page_file": "p048_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 48,
+    "panel": 3,
+    "bbox": {
+      "x": 85,
+      "y": 968,
+      "w": 1850,
+      "h": 466
+    },
+    "file": "p048_panel03.jpg",
+    "source_page_file": "p048_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 48,
+    "panel": 4,
+    "bbox": {
+      "x": 83,
+      "y": 1359,
+      "w": 1852,
+      "h": 968
+    },
+    "file": "p048_panel04.jpg",
+    "source_page_file": "p048_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 48,
+    "panel": 5,
+    "bbox": {
+      "x": 85,
+      "y": 2273,
+      "w": 1850,
+      "h": 727
+    },
+    "file": "p048_panel05.jpg",
+    "source_page_file": "p048_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 49,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1875,
+      "h": 1250
+    },
+    "file": "p049_panel01.jpg",
+    "source_page_file": "p049_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 49,
+    "panel": 2,
+    "bbox": {
+      "x": 0,
+      "y": 1120,
+      "w": 1820,
+      "h": 455
+    },
+    "file": "p049_panel02.jpg",
+    "source_page_file": "p049_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 49,
+    "panel": 3,
+    "bbox": {
+      "x": 1321,
+      "y": 1599,
+      "w": 499,
+      "h": 885
+    },
+    "file": "p049_panel03.jpg",
+    "source_page_file": "p049_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 49,
+    "panel": 4,
+    "bbox": {
+      "x": 0,
+      "y": 1611,
+      "w": 1514,
+      "h": 877
+    },
+    "file": "p049_panel04.jpg",
+    "source_page_file": "p049_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 49,
+    "panel": 5,
+    "bbox": {
+      "x": 103,
+      "y": 2543,
+      "w": 1716,
+      "h": 457
+    },
+    "file": "p049_panel05.jpg",
+    "source_page_file": "p049_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 50,
+    "panel": 1,
+    "bbox": {
+      "x": 1710,
+      "y": 17,
+      "w": 172,
+      "h": 1151
+    },
+    "file": "p050_panel01.jpg",
+    "source_page_file": "p050_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 50,
+    "panel": 2,
+    "bbox": {
+      "x": 98,
+      "y": 0,
+      "w": 1837,
+      "h": 2140
+    },
+    "file": "p050_panel02.jpg",
+    "source_page_file": "p050_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 50,
+    "panel": 3,
+    "bbox": {
+      "x": 100,
+      "y": 2197,
+      "w": 1835,
+      "h": 803
+    },
+    "file": "p050_panel03.jpg",
+    "source_page_file": "p050_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 1,
+    "bbox": {
+      "x": 967,
+      "y": 252,
+      "w": 844,
+      "h": 633
+    },
+    "file": "p051_panel01.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 2,
+    "bbox": {
+      "x": 102,
+      "y": 0,
+      "w": 859,
+      "h": 886
+    },
+    "file": "p051_panel02.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 3,
+    "bbox": {
+      "x": 1169,
+      "y": 946,
+      "w": 643,
+      "h": 480
+    },
+    "file": "p051_panel03.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 4,
+    "bbox": {
+      "x": 783,
+      "y": 946,
+      "w": 379,
+      "h": 479
+    },
+    "file": "p051_panel04.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 5,
+    "bbox": {
+      "x": 102,
+      "y": 945,
+      "w": 671,
+      "h": 481
+    },
+    "file": "p051_panel05.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 6,
+    "bbox": {
+      "x": 102,
+      "y": 1483,
+      "w": 1710,
+      "h": 514
+    },
+    "file": "p051_panel06.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 7,
+    "bbox": {
+      "x": 785,
+      "y": 2051,
+      "w": 1028,
+      "h": 949
+    },
+    "file": "p051_panel07.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 51,
+    "panel": 8,
+    "bbox": {
+      "x": 0,
+      "y": 2054,
+      "w": 778,
+      "h": 946
+    },
+    "file": "p051_panel08.jpg",
+    "source_page_file": "p051_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 52,
+    "panel": 1,
+    "bbox": {
+      "x": 119,
+      "y": 0,
+      "w": 1713,
+      "h": 635
+    },
+    "file": "p052_panel01.jpg",
+    "source_page_file": "p052_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 52,
+    "panel": 2,
+    "bbox": {
+      "x": 121,
+      "y": 689,
+      "w": 1814,
+      "h": 1822
+    },
+    "file": "p052_panel02.jpg",
+    "source_page_file": "p052_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 52,
+    "panel": 3,
+    "bbox": {
+      "x": 126,
+      "y": 2567,
+      "w": 1809,
+      "h": 433
+    },
+    "file": "p052_panel03.jpg",
+    "source_page_file": "p052_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 53,
+    "panel": 1,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1842,
+      "h": 1414
+    },
+    "file": "p053_panel01.jpg",
+    "source_page_file": "p053_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 53,
+    "panel": 2,
+    "bbox": {
+      "x": 518,
+      "y": 1475,
+      "w": 1292,
+      "h": 1525
+    },
+    "file": "p053_panel02.jpg",
+    "source_page_file": "p053_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 53,
+    "panel": 3,
+    "bbox": {
+      "x": 92,
+      "y": 1476,
+      "w": 657,
+      "h": 1524
+    },
+    "file": "p053_panel03.jpg",
+    "source_page_file": "p053_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 54,
+    "panel": 1,
+    "bbox": {
+      "x": 132,
+      "y": 0,
+      "w": 1803,
+      "h": 3000
+    },
+    "file": "p054_panel01.jpg",
+    "source_page_file": "p054_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 55,
+    "panel": 1,
+    "bbox": {
+      "x": 111,
+      "y": 258,
+      "w": 1711,
+      "h": 1611
+    },
+    "file": "p055_panel01.jpg",
+    "source_page_file": "p055_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 55,
+    "panel": 2,
+    "bbox": {
+      "x": 113,
+      "y": 1922,
+      "w": 1708,
+      "h": 890
+    },
+    "file": "p055_panel02.jpg",
+    "source_page_file": "p055_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 56,
+    "panel": 1,
+    "bbox": {
+      "x": 1152,
+      "y": 2205,
+      "w": 637,
+      "h": 621
+    },
+    "file": "p056_panel01.jpg",
+    "source_page_file": "p056_source.jpg"
+  },
+  {
+    "manga_id": "a460ab18-22c1-47eb-a08a-9ee85fe37ec8",
+    "chapter_id": "bc9dfc26-a53a-4e96-96c1-21ee4777cbef",
+    "chapter": "1",
+    "folder": "Chapter 1",
+    "page": 56,
+    "panel": 2,
+    "bbox": {
+      "x": 672,
+      "y": 1826,
+      "w": 1141,
+      "h": 1119
+    },
+    "file": "p056_panel02.jpg",
+    "source_page_file": "p056_source.jpg"
+  }
+]

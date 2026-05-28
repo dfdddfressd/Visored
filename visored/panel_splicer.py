@@ -22,8 +22,10 @@ import io
 import logging
 import os
 import sys
+import json
 from pathlib import Path
 from typing import Any
+
 
 import cv2
 import numpy as np
@@ -75,6 +77,27 @@ def detect_panels(
     background_tolerance: int = 30,
     rtl: bool = True,
 ) -> list[tuple[int, int, int, int]]:
+    
+    """
+    Detect manga panels in a page image using OpenCV contour detection.
+ 
+    Returns a list of (x, y, w, h) bounding boxes sorted in reading order
+    (left-to-right top-to-bottom by default; right-to-left if rtl=True).
+ 
+    Parameters
+    ----------
+    img_bytes:
+        Raw bytes of the page image (JPEG/PNG/WebP).
+    min_panel_ratio:
+        Panels smaller than this fraction of the page area are discarded
+        (filters out tiny noise contours). Kumiko default is 1/100.
+    background_tolerance:
+        How far from pure white (255) a pixel may be and still count as
+        background. Kumiko uses ~30.
+    rtl:
+        Sort panels right-to-left (for standard B&W manga). Colored Bleach
+        reads left-to-right, so False is correct.
+    """
     
     # Decode image
     arr = np.frombuffer(img_bytes, dtype=np.uint8)
@@ -181,43 +204,48 @@ async def process_chapter(
     client: MangaDexClient,
     chapter: dict[str, Any],
     out_dir: Path,
+    manga_id: str,
     *,
     quality: str = "data",
     min_panel_ratio: float = 0.02,
     use_counts: dict[str, int],
-) -> int:
-    """Download all pages in a chapter, detect panels, save cropped images.
-
-    Returns the number of panel images saved.
+) -> tuple[int, list[dict[str, Any]]]:
+    """
+    Download all pages in a chapter, detect panels, save cropped images,
+    source pages, and a per-chapter metadata.json.
+ 
+    Returns (panels_saved, list of panel metadata dicts).
     """
     chapter_id: str = chapter["id"]
     attrs: dict[str, Any] = chapter.get("attributes") or {}
-
+    chapter_number: str = attrs.get("chapter") or "unknown"
+ 
     base_label = chapter_folder_label(attrs, chapter_id)
     folder_name = unique_chapter_directory_name(base_label, use_counts)
     chapter_dir = out_dir / folder_name
     chapter_dir.mkdir(parents=True, exist_ok=True)
-
+ 
     # Fetch @Home server info for this chapter.
     try:
         server_data = await client.get_at_home_server(chapter_id)
     except Exception as exc:
         log.error("Could not get @Home server for %s: %s", chapter_id, exc)
-        return 0
-
+        return 0, []
+ 
     base_url: str = server_data.get("baseUrl", "")
     chapter_data: dict[str, Any] = server_data.get("chapter", {})
     chapter_hash: str = chapter_data.get("hash", "")
     filenames: list[str] = chapter_data.get(
         "dataSaver" if quality == "data-saver" else "data", []
     )
-
+ 
     if not filenames:
         log.warning("No page files for chapter %s", chapter_id)
-        return 0
-
+        return 0, []
+ 
     panels_saved = 0
-
+    chapter_metadata: list[dict[str, Any]] = []
+ 
     for page_idx, filename in enumerate(filenames, start=1):
         url = page_url(base_url, quality, chapter_hash, filename)
         try:
@@ -225,13 +253,18 @@ async def process_chapter(
         except Exception as exc:
             log.error("Failed to fetch page %d of %s: %s", page_idx, chapter_id, exc)
             continue
-
+ 
+        # Save the raw source page before cropping.
+        source_filename = f"p{page_idx:03d}_source.jpg"
+        source_path = chapter_dir / source_filename
+        source_path.write_bytes(img_bytes)
+ 
         # Detect panels.
         panels = detect_panels(img_bytes, min_panel_ratio=min_panel_ratio)
         log.info(
             "%s page %02d → %d panel(s)", folder_name, page_idx, len(panels)
         )
-
+ 
         for panel_idx, bbox in enumerate(panels, start=1):
             try:
                 panel_bytes = crop_panel(img_bytes, bbox)
@@ -240,15 +273,36 @@ async def process_chapter(
                     "Crop failed p%02d panel %d: %s", page_idx, panel_idx, exc
                 )
                 continue
-
-            out_name = f"p{page_idx:03d}_panel{panel_idx:02d}.jpg"
-            out_path = chapter_dir / out_name
-            out_path.write_bytes(panel_bytes)
+ 
+            panel_filename = f"p{page_idx:03d}_panel{panel_idx:02d}.jpg"
+            panel_path = chapter_dir / panel_filename
+            panel_path.write_bytes(panel_bytes)
             panels_saved += 1
-
-    return panels_saved
-
-
+ 
+            # Record metadata for this panel.
+            x, y, w, h = bbox
+            chapter_metadata.append({
+                "manga_id": manga_id,
+                "chapter_id": chapter_id,
+                "chapter": chapter_number,
+                "folder": folder_name,
+                "page": page_idx,
+                "panel": panel_idx,
+                "bbox": {"x": x, "y": y, "w": w, "h": h},
+                "file": panel_filename,
+                "source_page_file": source_filename,
+            })
+ 
+    # Write per-chapter metadata.json.
+    chapter_meta_path = chapter_dir / "metadata.json"
+    chapter_meta_path.write_text(
+        json.dumps(chapter_metadata, indent=2), encoding="utf-8"
+    )
+    log.info("Wrote %s", chapter_meta_path)
+ 
+    return panels_saved, chapter_metadata
+ 
+ 
 async def run(
     manga_id: str,
     out_dir: Path,
@@ -261,39 +315,56 @@ async def run(
     out_dir.mkdir(parents=True, exist_ok=True)
     connector = aiohttp.TCPConnector(limit=16)
     timeout = aiohttp.ClientTimeout(total=120, connect=15)
-
+ 
     async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
         client = MangaDexClient(session, user_agent)
         use_counts: dict[str, int] = {}
         total_panels = 0
         chapters_done = 0
-
+        all_metadata: list[dict[str, Any]] = []
+ 
         async for chapter in paginate_chapter_ids(client, manga_id):
             if max_chapters is not None and chapters_done >= max_chapters:
                 break
-            saved = await process_chapter(
+ 
+            saved, chapter_meta = await process_chapter(
                 client,
                 chapter,
                 out_dir,
+                manga_id,
                 quality=quality,
                 min_panel_ratio=min_panel_ratio,
                 use_counts=use_counts,
             )
             total_panels += saved
             chapters_done += 1
+            all_metadata.extend(chapter_meta)
+ 
             log.info(
                 "Chapter %d done — %d panels saved (total so far: %d)",
                 chapters_done,
                 saved,
                 total_panels,
             )
-
+ 
+    # Write master dataset.json at the root of the output directory.
+    dataset = {
+        "manga_id": manga_id,
+        "total_chapters": chapters_done,
+        "total_panels": total_panels,
+        "panels": all_metadata,
+    }
+    dataset_path = out_dir / "dataset.json"
+    dataset_path.write_text(json.dumps(dataset, indent=2), encoding="utf-8")
+ 
     log.info(
-        "Finished. %d chapters processed, %d panel images saved to %s",
+        "Finished. %d chapters, %d panels saved to %s",
         chapters_done,
         total_panels,
         out_dir,
     )
+    log.info("Master metadata written to %s", dataset_path)
+
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
