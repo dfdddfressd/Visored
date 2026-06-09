@@ -6,7 +6,7 @@
 <title>Visored — Panel Labeler</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --bg:       #0f0f10;
     --surface:  #1a1a1c;
@@ -19,7 +19,7 @@
     --red:      #f04444;
     --amber:    #f0a444;
   }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
@@ -30,7 +30,7 @@
     flex-direction: column;
     overflow: hidden;
   }
-
+ 
   /* ── Header ── */
   header {
     display: flex;
@@ -43,12 +43,12 @@
   }
   header h1 { font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
   header h1 span { color: var(--accent); }
-
+ 
   .progress-wrap { flex: 1; display: flex; align-items: center; gap: 10px; }
   .progress-bar  { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
   .progress-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width .3s; }
   .progress-text { font-size: 12px; color: var(--muted); white-space: nowrap; }
-
+ 
   .toggle-wrap { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
   .toggle { position: relative; width: 32px; height: 18px; }
   .toggle input { opacity: 0; width: 0; height: 0; }
@@ -65,7 +65,7 @@
   }
   .toggle input:checked + .slider { background: var(--accent); }
   .toggle input:checked + .slider::before { transform: translateX(14px); background: #fff; }
-
+ 
   /* ── Main layout ── */
   main {
     flex: 1;
@@ -75,14 +75,14 @@
     background: var(--border);
     overflow: hidden;
   }
-
+ 
   .pane {
     background: var(--bg);
     display: flex;
     flex-direction: column;
     overflow: hidden;
   }
-
+ 
   .pane-header {
     padding: 10px 16px;
     background: var(--surface);
@@ -94,7 +94,7 @@
     color: var(--muted);
     flex-shrink: 0;
   }
-
+ 
   /* ── Left pane: screenshot ── */
   #drop-zone {
     flex: 1;
@@ -114,7 +114,7 @@
     background: rgba(91,106,240,0.06);
   }
   #drop-zone.has-image { cursor: default; }
-
+ 
   #screenshot-img {
     max-width: 100%;
     max-height: 100%;
@@ -122,7 +122,7 @@
     display: none;
     border-radius: 4px;
   }
-
+ 
   .drop-hint {
     text-align: center;
     color: var(--muted);
@@ -131,7 +131,7 @@
   .drop-hint .icon { font-size: 36px; margin-bottom: 8px; opacity: .4; }
   .drop-hint p { font-size: 13px; }
   .drop-hint small { font-size: 11px; opacity: .6; }
-
+ 
   .screenshot-meta {
     padding: 8px 16px;
     background: var(--surface);
@@ -144,7 +144,7 @@
     flex-shrink: 0;
   }
   #screenshot-name { color: var(--text); font-weight: 500; }
-
+ 
   /* ── Right pane: candidates ── */
   #candidates-grid {
     flex: 1;
@@ -155,10 +155,10 @@
     padding: 4px;
     overflow: hidden;
   }
-
+ 
   /* 5th candidate spans both columns on the last row */
   .candidate:nth-child(5) { grid-column: span 2; }
-
+ 
   .candidate {
     background: var(--surface);
     border: 2px solid var(--border);
@@ -177,7 +177,7 @@
     position: absolute; top: 6px; right: 8px;
     color: var(--green); font-size: 16px; font-weight: 700;
   }
-
+ 
   .candidate img {
     flex: 1;
     width: 100%;
@@ -185,7 +185,7 @@
     background: #000;
     min-height: 0;
   }
-
+ 
   .candidate-meta {
     padding: 4px 8px;
     background: var(--surface2);
@@ -205,7 +205,7 @@
   .score-high  { color: var(--green); }
   .score-mid   { color: var(--amber); }
   .score-low   { color: var(--red);   }
-
+ 
   .kbd {
     position: absolute; top: 6px; left: 8px;
     background: rgba(0,0,0,0.6);
@@ -216,7 +216,7 @@
     border-radius: 3px;
     pointer-events: none;
   }
-
+ 
   /* ── Bottom bar ── */
   footer {
     display: flex;
@@ -227,7 +227,7 @@
     border-top: 1px solid var(--border);
     flex-shrink: 0;
   }
-
+ 
   .btn {
     padding: 7px 16px;
     border-radius: 6px;
@@ -242,7 +242,7 @@
   .btn-primary  { background: var(--accent); color: #fff; }
   .btn-ghost    { background: var(--surface2); color: var(--text); }
   .btn-danger   { background: transparent; color: var(--red); border: 1px solid var(--border); }
-
+ 
   .shortcuts {
     margin-left: auto;
     font-size: 11px;
@@ -258,7 +258,7 @@
     font-size: 11px;
     color: var(--text);
   }
-
+ 
   /* ── Loading / empty states ── */
   .loading {
     display: flex;
@@ -269,7 +269,7 @@
     color: var(--muted);
     flex: 1;
   }
-
+ 
   .spinner {
     width: 24px; height: 24px;
     border: 2px solid var(--border);
@@ -278,7 +278,7 @@
     animation: spin .7s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-
+ 
   .done-state {
     display: flex;
     flex-direction: column;
@@ -289,7 +289,112 @@
     color: var(--muted);
   }
   .done-state .big { font-size: 40px; }
-
+ 
+  /* ── Browse modal ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+ 
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 90vw;
+    max-width: 960px;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+ 
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .modal-header h2 { font-size: 14px; font-weight: 600; flex: 1; }
+ 
+  .chapter-tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .chapter-tab {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--muted);
+    font-size: 11px;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .chapter-tab:hover { background: var(--border); color: var(--text); }
+  .chapter-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+ 
+  .browse-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-auto-rows: 260px;
+    gap: 8px;
+    padding: 10px;
+    overflow-y: scroll;
+    min-height: 0;
+    align-content: start;
+  }
+ 
+  .browse-panel {
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .15s, transform .1s;
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+  }
+  .browse-panel:hover { border-color: var(--accent); transform: scale(1.03); }
+  .browse-panel.selected { border-color: var(--green); }
+ 
+  .browse-panel img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background: #111;
+    flex-shrink: 0;
+  }
+  .browse-panel-meta {
+    padding: 3px 6px;
+    font-size: 10px;
+    color: var(--muted);
+    background: var(--surface);
+    text-align: center;
+  }
+ 
+  .modal-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  #browse-selected-info { flex: 1; font-size: 12px; color: var(--muted); }
+ 
   /* ── Toast ── */
   #toast {
     position: fixed;
@@ -310,7 +415,7 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
   <h1>Visored <span>Labeler</span></h1>
   <div class="progress-wrap">
@@ -325,7 +430,7 @@
     </label>
   </div>
 </header>
-
+ 
 <main>
   <!-- Left: anime screenshot -->
   <div class="pane">
@@ -343,7 +448,7 @@
       <span id="queue-pos">—</span>
     </div>
   </div>
-
+ 
   <!-- Right: manga candidates -->
   <div class="pane">
     <div class="pane-header">Top 5 manga panel candidates — click to confirm match</div>
@@ -355,37 +460,66 @@
     </div>
   </div>
 </main>
-
+ 
 <footer>
   <button class="btn btn-ghost" id="btn-prev" disabled onclick="prevScreenshot()">← Prev</button>
+  <button class="btn btn-ghost" id="btn-browse" disabled onclick="openBrowse()">Browse panels 🔍</button>
   <button class="btn btn-danger" id="btn-skip" disabled onclick="skipCurrent()">Skip  <kbd>S</kbd></button>
   <div class="shortcuts">
     <span>Select: <kbd>1</kbd>–<kbd>5</kbd></span>
     <span>Skip: <kbd>S</kbd></span>
+    <span>Browse: <kbd>B</kbd></span>
     <span>Confirm: <kbd>Enter</kbd></span>
   </div>
 </footer>
-
+ 
+<!-- Browse modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Browse panels manually</h2>
+      <div class="chapter-tabs" id="chapter-tabs"></div>
+      <button class="btn btn-ghost" style="padding:4px 10px;font-size:12px" onclick="closeBrowse()">✕ Close</button>
+    </div>
+    <div class="browse-grid" id="browse-grid"></div>
+    <div class="modal-footer">
+      <span id="browse-selected-info">Click a panel to select it</span>
+      <button class="btn btn-ghost" onclick="closeBrowse()">Cancel</button>
+      <button class="btn btn-primary" id="btn-browse-confirm" disabled onclick="confirmBrowsePick()">Confirm this panel ↵</button>
+    </div>
+  </div>
+</div>
+ 
 <div id="toast"></div>
-
+ 
 <script>
 const API = 'http://localhost:8000';
 let currentScreenshot = null;   // { filename, url }
 let candidates        = [];     // array of candidate objects from /search
 let selectedIdx       = null;   // which candidate is selected (0-based)
 let queuePos          = { index: 0, total: 0 };
-
+ 
 // ── Boot ──────────────────────────────────────────────────────────────────
-
+ 
 async function init() {
+  // Wait until the server is fully ready (model loaded) before fetching first screenshot
+  let ready = false;
+  while (!ready) {
+    try {
+      const r = await fetch(`${API}/status`);
+      if (r.ok) ready = true;
+    } catch(e) {
+      await new Promise(res => setTimeout(res, 1000));
+    }
+  }
   await refreshStatus();
   await loadNext();
   setupDropZone();
   setupKeyboard();
 }
-
+ 
 // ── Status / progress ────────────────────────────────────────────────────
-
+ 
 async function refreshStatus() {
   try {
     const r = await fetch(`${API}/status`);
@@ -398,82 +532,107 @@ async function refreshStatus() {
     document.getElementById('progress-text').textContent = 'Server offline';
   }
 }
-
+ 
 // ── Queue navigation ──────────────────────────────────────────────────────
-
+ 
 async function loadNext() {
   clearCandidates();
   selectedIdx = null;
-
+ 
   const r = await fetch(`${API}/next`);
   const data = await r.json();
-
+ 
   if (data.done) {
     showDone();
     return;
   }
-
+ 
   queuePos = { index: data.index, total: data.total };
-  await loadScreenshot({ filename: data.filename, url: data.url });
+  await loadScreenshot({
+    filename:       data.filename,
+    rel:            data.rel,
+    url:            data.url,
+    chapter_folder: data.chapter_folder,   // e.g. "Chapter 1" or null
+  });
 }
-
+ 
 async function prevScreenshot() {
   // Re-fetch from server would require cursor manipulation; for now just toast
   toast('Use the queue — previous is already labeled ✓');
 }
-
+ 
 async function loadScreenshot(shot) {
   currentScreenshot = shot;
   const img  = document.getElementById('screenshot-img');
   const hint = document.getElementById('drop-hint');
   const dz   = document.getElementById('drop-zone');
-
+ 
   img.src = `${API}${shot.url}`;
   img.style.display = 'block';
   hint.style.display = 'none';
   dz.classList.add('has-image');
-  document.getElementById('screenshot-name').textContent = shot.filename;
+ 
+  // Show chapter badge alongside filename if inside a subfolder
+  const chapterBadge = shot.chapter_folder
+    ? `<span style="color:var(--accent);margin-right:6px">[${shot.chapter_folder}]</span>`
+    : '';
+  document.getElementById('screenshot-name').innerHTML = chapterBadge + shot.filename;
   document.getElementById('queue-pos').textContent =
     `${queuePos.index + 1} / ${queuePos.total}`;
   document.getElementById('btn-skip').disabled = false;
-
+  document.getElementById('btn-browse').disabled = false;
+ 
   await searchCandidates(shot.url);
 }
-
+ 
 // ── Search ────────────────────────────────────────────────────────────────
-
+ 
 async function searchCandidates(screenshotUrl) {
   showSearching();
-
-  // Fetch the image as a blob to POST to /search
-  const imgResp = await fetch(`${API}${screenshotUrl}`);
-  const blob    = await imgResp.blob();
-  const form    = new FormData();
+ 
+  // Encode each path segment separately to handle spaces in "Chapter 1" etc.
+  const encodedUrl = screenshotUrl.split('/').map((seg, i) =>
+    i === 0 ? seg : encodeURIComponent(seg)
+  ).join('/');
+ 
+  const imgResp = await fetch(`${API}${encodedUrl}`);
+  if (!imgResp.ok) {
+    document.getElementById('candidates-grid').innerHTML =
+      `<div class="loading"><span style="color:var(--red)">Failed to fetch screenshot (${imgResp.status}). Check server.</span></div>`;
+    return;
+  }
+  const blob = await imgResp.blob();
+  const form = new FormData();
   form.append('file', blob, currentScreenshot.filename);
   form.append('manga_mode', document.getElementById('manga-mode-toggle').checked);
-
-  const r    = await fetch(`${API}/search`, { method: 'POST', body: form });
+ 
+  const r = await fetch(`${API}/search`, { method: 'POST', body: form });
+  if (r.status === 503) {
+    // Model still loading — wait 2s and retry once
+    await new Promise(res => setTimeout(res, 2000));
+    return searchCandidates(screenshotUrl);
+  }
   const data = await r.json();
   candidates = data.candidates;
   renderCandidates(candidates);
 }
-
+ 
 // ── Render candidates ─────────────────────────────────────────────────────
-
+ 
 function renderCandidates(list) {
   const grid = document.getElementById('candidates-grid');
   grid.innerHTML = '';
-
+ 
   list.forEach((c, i) => {
     const card = document.createElement('div');
     card.className = 'candidate';
     card.dataset.idx = i;
     card.onclick = () => selectCandidate(i);
-
+ 
     const scoreClass = c.score >= 0.90 ? 'score-high'
                      : c.score >= 0.85 ? 'score-mid'
                      : 'score-low';
-
+ 
     card.innerHTML = `
       <span class="kbd">${i + 1}</span>
       <img src="${API}${c.url}" alt="Panel Ch${c.chapter} p${c.page} #${c.panel}" loading="lazy">
@@ -481,40 +640,40 @@ function renderCandidates(list) {
         <span class="candidate-info">Ch ${c.chapter} · p${c.page} · #${c.panel}</span>
         <span class="candidate-score ${scoreClass}">${c.score.toFixed(3)}</span>
       </div>`;
-
+ 
     grid.appendChild(card);
   });
 }
-
+ 
 function showSearching() {
   const grid = document.getElementById('candidates-grid');
   grid.innerHTML = `<div class="loading"><div class="spinner"></div><span>Searching…</span></div>`;
 }
-
+ 
 function clearCandidates() {
   document.getElementById('candidates-grid').innerHTML = '';
 }
-
+ 
 // ── Selection ─────────────────────────────────────────────────────────────
-
+ 
 function selectCandidate(idx) {
   selectedIdx = idx;
   document.querySelectorAll('.candidate').forEach((el, i) => {
     el.classList.toggle('selected', i === idx);
   });
 }
-
+ 
 // ── Confirm label ─────────────────────────────────────────────────────────
-
+ 
 async function confirmLabel() {
   if (selectedIdx === null) { toast('Select a panel first (keys 1–5)'); return; }
   const c = candidates[selectedIdx];
-
+ 
   await fetch(`${API}/label`, {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      anime_screenshot: currentScreenshot.filename,
+      anime_screenshot: currentScreenshot.rel || currentScreenshot.filename,
       manga_panel:      `${c.folder}/${c.file}`,
       chapter:          c.chapter,
       page:             c.page,
@@ -523,31 +682,31 @@ async function confirmLabel() {
       manga_mode:       document.getElementById('manga-mode-toggle').checked,
     }),
   });
-
+ 
   toast(`✓ Saved — Ch ${c.chapter}, p${c.page}, panel ${c.panel}`);
   await refreshStatus();
   await loadNext();
 }
-
+ 
 // ── Skip ──────────────────────────────────────────────────────────────────
-
+ 
 async function skipCurrent() {
   if (!currentScreenshot) return;
   await fetch(`${API}/skip`, {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ filename: currentScreenshot.filename }),
+    body: JSON.stringify({ rel: currentScreenshot.rel || currentScreenshot.filename }),
   });
   toast('Skipped');
   await refreshStatus();
   await loadNext();
 }
-
+ 
 // ── Drag and drop ─────────────────────────────────────────────────────────
-
+ 
 function setupDropZone() {
   const dz = document.getElementById('drop-zone');
-
+ 
   dz.addEventListener('dragover', e => {
     e.preventDefault();
     dz.classList.add('dragover');
@@ -560,7 +719,7 @@ function setupDropZone() {
     if (!file || !file.type.startsWith('image/')) return;
     await handleDroppedFile(file);
   });
-
+ 
   // Click to open file picker when no image loaded
   dz.addEventListener('click', () => {
     if (dz.classList.contains('has-image')) return;
@@ -571,17 +730,17 @@ function setupDropZone() {
     input.click();
   });
 }
-
+ 
 async function handleDroppedFile(file) {
   const form = new FormData();
   form.append('file', file, file.name);
-
+ 
   const r    = await fetch(`${API}/upload_screenshot`, { method: 'POST', body: form });
   const data = await r.json();
-
+ 
   currentScreenshot = { filename: data.filename, url: data.url };
   candidates = data.candidates;
-
+ 
   const img  = document.getElementById('screenshot-img');
   img.src = URL.createObjectURL(file);
   img.style.display = 'block';
@@ -589,17 +748,135 @@ async function handleDroppedFile(file) {
   document.getElementById('drop-zone').classList.add('has-image');
   document.getElementById('screenshot-name').textContent = file.name;
   document.getElementById('btn-skip').disabled = false;
-
+ 
   renderCandidates(candidates);
   await refreshStatus();
 }
-
+ 
+// ── Browse mode ───────────────────────────────────────────────────────────
+ 
+let browseChapters    = [];
+let browseSelected    = null;   // { chapter, page, panel, folder, file, url }
+let activeChapterTab  = null;
+ 
+async function openBrowse() {
+  if (!currentScreenshot) return;
+  browseSelected = null;
+  document.getElementById('btn-browse-confirm').disabled = true;
+  document.getElementById('browse-selected-info').textContent = 'Click a panel to select it';
+ 
+  // Load chapter list if we haven't yet
+  if (browseChapters.length === 0) {
+    const r = await fetch(`${API}/chapters`);
+    const d = await r.json();
+    browseChapters = d.chapters;
+  }
+ 
+  renderChapterTabs();
+  document.getElementById('modal-overlay').classList.add('open');
+ 
+  // Auto-load the chapter that matches the current screenshot's subfolder.
+  // Falls back to first chapter if no match (flat layout or mismatch).
+  const targetChapter = currentScreenshot.chapter_folder
+    && browseChapters.find(ch => ch === currentScreenshot.chapter_folder);
+  const defaultChapter = targetChapter || browseChapters[0];
+  if (defaultChapter) await loadBrowseChapter(defaultChapter);
+}
+ 
+function closeBrowse() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+ 
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeBrowse();
+}
+ 
+function renderChapterTabs() {
+  const container = document.getElementById('chapter-tabs');
+  container.innerHTML = '';
+  browseChapters.forEach(ch => {
+    const tab = document.createElement('button');
+    tab.className = 'chapter-tab';
+    tab.textContent = ch;
+    tab.onclick = () => loadBrowseChapter(ch);
+    container.appendChild(tab);
+  });
+}
+ 
+async function loadBrowseChapter(folder) {
+  activeChapterTab = folder;
+ 
+  // Update active tab style
+  document.querySelectorAll('.chapter-tab').forEach(t => {
+    t.classList.toggle('active', t.textContent === folder);
+  });
+ 
+  const grid = document.getElementById('browse-grid');
+  grid.innerHTML = '<div class="loading"><div class="spinner"></div><span>Loading panels…</span></div>';
+ 
+  const r    = await fetch(`${API}/chapter_panels/${encodeURIComponent(folder)}`);
+  const data = await r.json();
+ 
+  grid.innerHTML = '';
+  data.panels.forEach(panel => {
+    const card = document.createElement('div');
+    card.className = 'browse-panel';
+    card.innerHTML = `
+      <img src="${API}${panel.url}" loading="lazy" alt="Ch${panel.chapter} p${panel.page} #${panel.panel}">
+      <div class="browse-panel-meta">p${panel.page} · #${panel.panel}</div>`;
+    card.onclick = () => selectBrowsePanel(card, panel);
+    grid.appendChild(card);
+  });
+}
+ 
+function selectBrowsePanel(card, panel) {
+  document.querySelectorAll('.browse-panel').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  browseSelected = panel;
+  document.getElementById('browse-selected-info').textContent =
+    `Selected: Ch ${panel.chapter}, page ${panel.page}, panel ${panel.panel}`;
+  document.getElementById('btn-browse-confirm').disabled = false;
+}
+ 
+async function confirmBrowsePick() {
+  if (!browseSelected || !currentScreenshot) return;
+  const p = browseSelected;
+ 
+  await fetch(`${API}/label`, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      anime_screenshot: currentScreenshot.rel || currentScreenshot.filename,
+      manga_panel:      `${p.folder}/${p.file}`,
+      chapter:          p.chapter,
+      page:             p.page,
+      panel:            p.panel,
+      score:            0,          // 0 = manually picked, not FAISS ranked
+      manga_mode:       false,
+      manual_pick:      true,       // flag so you can tell these apart in labels.json
+    }),
+  });
+ 
+  closeBrowse();
+  toast(`✓ Manually matched — Ch ${p.chapter}, p${p.page}, panel ${p.panel}`);
+  await refreshStatus();
+  await loadNext();
+}
+ 
 // ── Keyboard shortcuts ────────────────────────────────────────────────────
-
+ 
 function setupKeyboard() {
   document.addEventListener('keydown', e => {
     if (e.target.tagName === 'INPUT') return;
     const k = e.key;
+    const modalOpen = document.getElementById('modal-overlay').classList.contains('open');
+ 
+    if (modalOpen) {
+      if (k === 'Escape') closeBrowse();
+      if (k === 'Enter' && browseSelected) confirmBrowsePick();
+      return;
+    }
+ 
     if (k >= '1' && k <= '5') {
       const idx = parseInt(k) - 1;
       if (idx < candidates.length) selectCandidate(idx);
@@ -607,12 +884,14 @@ function setupKeyboard() {
       confirmLabel();
     } else if (k === 's' || k === 'S') {
       skipCurrent();
+    } else if (k === 'b' || k === 'B') {
+      openBrowse();
     }
   });
 }
-
+ 
 // ── Done state ────────────────────────────────────────────────────────────
-
+ 
 function showDone() {
   const grid = document.getElementById('candidates-grid');
   grid.innerHTML = `
@@ -628,9 +907,9 @@ function showDone() {
   document.getElementById('queue-pos').textContent = 'Done';
   document.getElementById('btn-skip').disabled = true;
 }
-
+ 
 // ── Toast ─────────────────────────────────────────────────────────────────
-
+ 
 let toastTimer;
 function toast(msg) {
   const el = document.getElementById('toast');
@@ -639,20 +918,20 @@ function toast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('show'), 2000);
 }
-
+ 
 // ── Confirm button in footer (dynamically created) ───────────────────────
-
+ 
 document.querySelector('footer').insertAdjacentHTML('afterbegin',
   '<button class="btn btn-primary" id="btn-confirm" disabled onclick="confirmLabel()">Confirm match ↵</button>'
 );
-
+ 
 // Enable confirm when a candidate is selected
 const origSelect = selectCandidate;
 window.selectCandidate = function(idx) {
   origSelect(idx);
   document.getElementById('btn-confirm').disabled = false;
 };
-
+ 
 // ── Init ──────────────────────────────────────────────────────────────────
 init();
 </script>
