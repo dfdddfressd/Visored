@@ -12,6 +12,7 @@ index_meta.json
 
 # Panel images (huge, not source code)
 bleach_panels/
+screenshots
 
 # Common OS noise
 .DS_Store

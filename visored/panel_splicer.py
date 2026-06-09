@@ -210,22 +210,27 @@ async def process_chapter(
     min_panel_ratio: float = 0.02,
     use_counts: dict[str, int],
 ) -> tuple[int, list[dict[str, Any]]]:
-    """
-    Download all pages in a chapter, detect panels, save cropped images,
-    source pages, and a per-chapter metadata.json.
  
-    Returns (panels_saved, list of panel metadata dicts).
-    """
     chapter_id: str = chapter["id"]
     attrs: dict[str, Any] = chapter.get("attributes") or {}
     chapter_number: str = attrs.get("chapter") or "unknown"
+ 
+    # ── DEDUPLICATION FIX ──────────────────────────────────────────────────
+    # MangaDex may return the same chapter from multiple scanlation groups.
+    # We only want the first one. If we've already processed this chapter
+    # number, skip it entirely — don't create a Chapter 1 (2) folder.
+    if chapter_number in use_counts:
+        log.info(
+            "Skipping duplicate chapter %s (already processed)", chapter_number
+        )
+        return 0, []
+    # ──────────────────────────────────────────────────────────────────────
  
     base_label = chapter_folder_label(attrs, chapter_id)
     folder_name = unique_chapter_directory_name(base_label, use_counts)
     chapter_dir = out_dir / folder_name
     chapter_dir.mkdir(parents=True, exist_ok=True)
  
-    # Fetch @Home server info for this chapter.
     try:
         server_data = await client.get_at_home_server(chapter_id)
     except Exception as exc:
@@ -254,12 +259,10 @@ async def process_chapter(
             log.error("Failed to fetch page %d of %s: %s", page_idx, chapter_id, exc)
             continue
  
-        # Save the raw source page before cropping.
         source_filename = f"p{page_idx:03d}_source.jpg"
         source_path = chapter_dir / source_filename
         source_path.write_bytes(img_bytes)
  
-        # Detect panels.
         panels = detect_panels(img_bytes, min_panel_ratio=min_panel_ratio)
         log.info(
             "%s page %02d → %d panel(s)", folder_name, page_idx, len(panels)
@@ -279,7 +282,6 @@ async def process_chapter(
             panel_path.write_bytes(panel_bytes)
             panels_saved += 1
  
-            # Record metadata for this panel.
             x, y, w, h = bbox
             chapter_metadata.append({
                 "manga_id": manga_id,
@@ -293,7 +295,6 @@ async def process_chapter(
                 "source_page_file": source_filename,
             })
  
-    # Write per-chapter metadata.json.
     chapter_meta_path = chapter_dir / "metadata.json"
     chapter_meta_path.write_text(
         json.dumps(chapter_metadata, indent=2), encoding="utf-8"

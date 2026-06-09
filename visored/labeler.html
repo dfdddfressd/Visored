@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visored — Panel Labeler</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0f0f10;
+    --surface:  #1a1a1c;
+    --surface2: #242428;
+    --border:   #2e2e34;
+    --text:     #e8e8ec;
+    --muted:    #7a7a88;
+    --accent:   #5b6af0;
+    --green:    #3ecf74;
+    --red:      #f04444;
+    --amber:    #f0a444;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  header h1 { font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
+  header h1 span { color: var(--accent); }
+
+  .progress-wrap { flex: 1; display: flex; align-items: center; gap: 10px; }
+  .progress-bar  { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width .3s; }
+  .progress-text { font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  .toggle-wrap { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .toggle { position: relative; width: 32px; height: 18px; }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .slider {
+    position: absolute; inset: 0;
+    background: var(--surface2); border-radius: 9px; cursor: pointer;
+    transition: background .2s;
+  }
+  .slider::before {
+    content: ''; position: absolute;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--muted); top: 3px; left: 3px;
+    transition: transform .2s, background .2s;
+  }
+  .toggle input:checked + .slider { background: var(--accent); }
+  .toggle input:checked + .slider::before { transform: translateX(14px); background: #fff; }
+
+  /* ── Main layout ── */
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    overflow: hidden;
+  }
+
+  .pane {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .pane-header {
+    padding: 10px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  /* ── Left pane: screenshot ── */
+  #drop-zone {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    border: 2px dashed transparent;
+    transition: border-color .2s, background .2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  #drop-zone.dragover {
+    border-color: var(--accent);
+    background: rgba(91,106,240,0.06);
+  }
+  #drop-zone.has-image { cursor: default; }
+
+  #screenshot-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+    border-radius: 4px;
+  }
+
+  .drop-hint {
+    text-align: center;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .drop-hint .icon { font-size: 36px; margin-bottom: 8px; opacity: .4; }
+  .drop-hint p { font-size: 13px; }
+  .drop-hint small { font-size: 11px; opacity: .6; }
+
+  .screenshot-meta {
+    padding: 8px 16px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  #screenshot-name { color: var(--text); font-weight: 500; }
+
+  /* ── Right pane: candidates ── */
+  #candidates-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 4px;
+    padding: 4px;
+    overflow: hidden;
+  }
+
+  /* 5th candidate spans both columns on the last row */
+  .candidate:nth-child(5) { grid-column: span 2; }
+
+  .candidate {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .15s, transform .1s;
+    position: relative;
+  }
+  .candidate:hover { border-color: var(--accent); transform: scale(1.01); }
+  .candidate.selected { border-color: var(--green); }
+  .candidate.selected::after {
+    content: '✓';
+    position: absolute; top: 6px; right: 8px;
+    color: var(--green); font-size: 16px; font-weight: 700;
+  }
+
+  .candidate img {
+    flex: 1;
+    width: 100%;
+    object-fit: contain;
+    background: #000;
+    min-height: 0;
+  }
+
+  .candidate-meta {
+    padding: 4px 8px;
+    background: var(--surface2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .candidate-info { font-size: 11px; color: var(--text); }
+  .candidate-score {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: var(--surface);
+  }
+  .score-high  { color: var(--green); }
+  .score-mid   { color: var(--amber); }
+  .score-low   { color: var(--red);   }
+
+  .kbd {
+    position: absolute; top: 6px; left: 8px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  /* ── Bottom bar ── */
+  footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .btn {
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity .15s, transform .1s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn:disabled { opacity: .35; cursor: not-allowed; }
+  .btn-primary  { background: var(--accent); color: #fff; }
+  .btn-ghost    { background: var(--surface2); color: var(--text); }
+  .btn-danger   { background: transparent; color: var(--red); border: 1px solid var(--border); }
+
+  .shortcuts {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+  }
+  .shortcuts kbd {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 11px;
+    color: var(--text);
+  }
+
+  /* ── Loading / empty states ── */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  .spinner {
+    width: 24px; height: 24px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .done-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex: 1;
+    color: var(--muted);
+  }
+  .done-state .big { font-size: 40px; }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed;
+    bottom: 60px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity .2s, transform .2s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Visored <span>Labeler</span></h1>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <span class="progress-text" id="progress-text">Loading…</span>
+  </div>
+  <div class="toggle-wrap">
+    <span>Manga mode</span>
+    <label class="toggle">
+      <input type="checkbox" id="manga-mode-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+</header>
+
+<main>
+  <!-- Left: anime screenshot -->
+  <div class="pane">
+    <div class="pane-header">Anime screenshot</div>
+    <div id="drop-zone">
+      <div class="drop-hint" id="drop-hint">
+        <div class="icon">🎬</div>
+        <p>Drop a screenshot here</p>
+        <small>or screenshots will load automatically from the queue</small>
+      </div>
+      <img id="screenshot-img" alt="Current anime screenshot">
+    </div>
+    <div class="screenshot-meta">
+      <span id="screenshot-name">—</span>
+      <span id="queue-pos">—</span>
+    </div>
+  </div>
+
+  <!-- Right: manga candidates -->
+  <div class="pane">
+    <div class="pane-header">Top 5 manga panel candidates — click to confirm match</div>
+    <div id="candidates-grid">
+      <div class="loading" id="candidates-loading" style="display:none">
+        <div class="spinner"></div>
+        <span>Searching…</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <button class="btn btn-ghost" id="btn-prev" disabled onclick="prevScreenshot()">← Prev</button>
+  <button class="btn btn-danger" id="btn-skip" disabled onclick="skipCurrent()">Skip  <kbd>S</kbd></button>
+  <div class="shortcuts">
+    <span>Select: <kbd>1</kbd>–<kbd>5</kbd></span>
+    <span>Skip: <kbd>S</kbd></span>
+    <span>Confirm: <kbd>Enter</kbd></span>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+const API = 'http://localhost:8000';
+let currentScreenshot = null;   // { filename, url }
+let candidates        = [];     // array of candidate objects from /search
+let selectedIdx       = null;   // which candidate is selected (0-based)
+let queuePos          = { index: 0, total: 0 };
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+
+async function init() {
+  await refreshStatus();
+  await loadNext();
+  setupDropZone();
+  setupKeyboard();
+}
+
+// ── Status / progress ────────────────────────────────────────────────────
+
+async function refreshStatus() {
+  try {
+    const r = await fetch(`${API}/status`);
+    const s = await r.json();
+    const pct = s.total ? Math.round((s.labeled / s.total) * 100) : 0;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-text').textContent =
+      `${s.labeled} / ${s.total} labeled`;
+  } catch(e) {
+    document.getElementById('progress-text').textContent = 'Server offline';
+  }
+}
+
+// ── Queue navigation ──────────────────────────────────────────────────────
+
+async function loadNext() {
+  clearCandidates();
+  selectedIdx = null;
+
+  const r = await fetch(`${API}/next`);
+  const data = await r.json();
+
+  if (data.done) {
+    showDone();
+    return;
+  }
+
+  queuePos = { index: data.index, total: data.total };
+  await loadScreenshot({ filename: data.filename, url: data.url });
+}
+
+async function prevScreenshot() {
+  // Re-fetch from server would require cursor manipulation; for now just toast
+  toast('Use the queue — previous is already labeled ✓');
+}
+
+async function loadScreenshot(shot) {
+  currentScreenshot = shot;
+  const img  = document.getElementById('screenshot-img');
+  const hint = document.getElementById('drop-hint');
+  const dz   = document.getElementById('drop-zone');
+
+  img.src = `${API}${shot.url}`;
+  img.style.display = 'block';
+  hint.style.display = 'none';
+  dz.classList.add('has-image');
+  document.getElementById('screenshot-name').textContent = shot.filename;
+  document.getElementById('queue-pos').textContent =
+    `${queuePos.index + 1} / ${queuePos.total}`;
+  document.getElementById('btn-skip').disabled = false;
+
+  await searchCandidates(shot.url);
+}
+
+// ── Search ────────────────────────────────────────────────────────────────
+
+async function searchCandidates(screenshotUrl) {
+  showSearching();
+
+  // Fetch the image as a blob to POST to /search
+  const imgResp = await fetch(`${API}${screenshotUrl}`);
+  const blob    = await imgResp.blob();
+  const form    = new FormData();
+  form.append('file', blob, currentScreenshot.filename);
+  form.append('manga_mode', document.getElementById('manga-mode-toggle').checked);
+
+  const r    = await fetch(`${API}/search`, { method: 'POST', body: form });
+  const data = await r.json();
+  candidates = data.candidates;
+  renderCandidates(candidates);
+}
+
+// ── Render candidates ─────────────────────────────────────────────────────
+
+function renderCandidates(list) {
+  const grid = document.getElementById('candidates-grid');
+  grid.innerHTML = '';
+
+  list.forEach((c, i) => {
+    const card = document.createElement('div');
+    card.className = 'candidate';
+    card.dataset.idx = i;
+    card.onclick = () => selectCandidate(i);
+
+    const scoreClass = c.score >= 0.90 ? 'score-high'
+                     : c.score >= 0.85 ? 'score-mid'
+                     : 'score-low';
+
+    card.innerHTML = `
+      <span class="kbd">${i + 1}</span>
+      <img src="${API}${c.url}" alt="Panel Ch${c.chapter} p${c.page} #${c.panel}" loading="lazy">
+      <div class="candidate-meta">
+        <span class="candidate-info">Ch ${c.chapter} · p${c.page} · #${c.panel}</span>
+        <span class="candidate-score ${scoreClass}">${c.score.toFixed(3)}</span>
+      </div>`;
+
+    grid.appendChild(card);
+  });
+}
+
+function showSearching() {
+  const grid = document.getElementById('candidates-grid');
+  grid.innerHTML = `<div class="loading"><div class="spinner"></div><span>Searching…</span></div>`;
+}
+
+function clearCandidates() {
+  document.getElementById('candidates-grid').innerHTML = '';
+}
+
+// ── Selection ─────────────────────────────────────────────────────────────
+
+function selectCandidate(idx) {
+  selectedIdx = idx;
+  document.querySelectorAll('.candidate').forEach((el, i) => {
+    el.classList.toggle('selected', i === idx);
+  });
+}
+
+// ── Confirm label ─────────────────────────────────────────────────────────
+
+async function confirmLabel() {
+  if (selectedIdx === null) { toast('Select a panel first (keys 1–5)'); return; }
+  const c = candidates[selectedIdx];
+
+  await fetch(`${API}/label`, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      anime_screenshot: currentScreenshot.filename,
+      manga_panel:      `${c.folder}/${c.file}`,
+      chapter:          c.chapter,
+      page:             c.page,
+      panel:            c.panel,
+      score:            c.score,
+      manga_mode:       document.getElementById('manga-mode-toggle').checked,
+    }),
+  });
+
+  toast(`✓ Saved — Ch ${c.chapter}, p${c.page}, panel ${c.panel}`);
+  await refreshStatus();
+  await loadNext();
+}
+
+// ── Skip ──────────────────────────────────────────────────────────────────
+
+async function skipCurrent() {
+  if (!currentScreenshot) return;
+  await fetch(`${API}/skip`, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ filename: currentScreenshot.filename }),
+  });
+  toast('Skipped');
+  await refreshStatus();
+  await loadNext();
+}
+
+// ── Drag and drop ─────────────────────────────────────────────────────────
+
+function setupDropZone() {
+  const dz = document.getElementById('drop-zone');
+
+  dz.addEventListener('dragover', e => {
+    e.preventDefault();
+    dz.classList.add('dragover');
+  });
+  dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+  dz.addEventListener('drop', async e => {
+    e.preventDefault();
+    dz.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (!file || !file.type.startsWith('image/')) return;
+    await handleDroppedFile(file);
+  });
+
+  // Click to open file picker when no image loaded
+  dz.addEventListener('click', () => {
+    if (dz.classList.contains('has-image')) return;
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = e => handleDroppedFile(e.target.files[0]);
+    input.click();
+  });
+}
+
+async function handleDroppedFile(file) {
+  const form = new FormData();
+  form.append('file', file, file.name);
+
+  const r    = await fetch(`${API}/upload_screenshot`, { method: 'POST', body: form });
+  const data = await r.json();
+
+  currentScreenshot = { filename: data.filename, url: data.url };
+  candidates = data.candidates;
+
+  const img  = document.getElementById('screenshot-img');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('drop-hint').style.display = 'none';
+  document.getElementById('drop-zone').classList.add('has-image');
+  document.getElementById('screenshot-name').textContent = file.name;
+  document.getElementById('btn-skip').disabled = false;
+
+  renderCandidates(candidates);
+  await refreshStatus();
+}
+
+// ── Keyboard shortcuts ────────────────────────────────────────────────────
+
+function setupKeyboard() {
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT') return;
+    const k = e.key;
+    if (k >= '1' && k <= '5') {
+      const idx = parseInt(k) - 1;
+      if (idx < candidates.length) selectCandidate(idx);
+    } else if (k === 'Enter') {
+      confirmLabel();
+    } else if (k === 's' || k === 'S') {
+      skipCurrent();
+    }
+  });
+}
+
+// ── Done state ────────────────────────────────────────────────────────────
+
+function showDone() {
+  const grid = document.getElementById('candidates-grid');
+  grid.innerHTML = `
+    <div class="done-state" style="grid-column:span 2">
+      <div class="big">🎉</div>
+      <p>All screenshots labeled!</p>
+      <small style="color:var(--muted)">Drop new screenshots to continue</small>
+    </div>`;
+  document.getElementById('screenshot-img').style.display = 'none';
+  document.getElementById('drop-hint').style.display = 'flex';
+  document.getElementById('drop-zone').classList.remove('has-image');
+  document.getElementById('screenshot-name').textContent = '—';
+  document.getElementById('queue-pos').textContent = 'Done';
+  document.getElementById('btn-skip').disabled = true;
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────
+
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+// ── Confirm button in footer (dynamically created) ───────────────────────
+
+document.querySelector('footer').insertAdjacentHTML('afterbegin',
+  '<button class="btn btn-primary" id="btn-confirm" disabled onclick="confirmLabel()">Confirm match ↵</button>'
+);
+
+// Enable confirm when a candidate is selected
+const origSelect = selectCandidate;
+window.selectCandidate = function(idx) {
+  origSelect(idx);
+  document.getElementById('btn-confirm').disabled = false;
+};
+
+// ── Init ──────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
