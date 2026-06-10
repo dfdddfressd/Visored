@@ -77,76 +77,83 @@ def detect_panels(
     background_tolerance: int = 30,
     rtl: bool = True,
 ) -> list[tuple[int, int, int, int]]:
-    
     """
-    Detect manga panels in a page image using OpenCV contour detection.
+    Detect manga panels using a dual-threshold approach that handles both
+    white gutters (standard manga) and black gutters (colored Bleach pages).
  
-    Returns a list of (x, y, w, h) bounding boxes sorted in reading order
-    (left-to-right top-to-bottom by default; right-to-left if rtl=True).
+    The original single-threshold approach only marked near-white pixels as
+    background, so black borders between panels were treated as foreground
+    content — causing adjacent panels to merge into one contour.
  
-    Parameters
-    ----------
-    img_bytes:
-        Raw bytes of the page image (JPEG/PNG/WebP).
-    min_panel_ratio:
-        Panels smaller than this fraction of the page area are discarded
-        (filters out tiny noise contours). Kumiko default is 1/100.
-    background_tolerance:
-        How far from pure white (255) a pixel may be and still count as
-        background. Kumiko uses ~30.
-    rtl:
-        Sort panels right-to-left (for standard B&W manga). Colored Bleach
-        reads left-to-right, so False is correct.
+    Fix: run TWO threshold passes and combine them:
+      1. White-gutter mask  — pixels close to pure white (original logic)
+      2. Black-gutter mask  — pixels close to pure black (new)
+    Any pixel that is either very white OR very black is considered a separator.
+    The union of both masks is dilated and used for contour detection, giving
+    the contour finder clean boundaries on both light and dark bordered pages.
     """
-    
-    # Decode image
     arr = np.frombuffer(img_bytes, dtype=np.uint8)
     img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
     if img is None:
         log.warning("cv2 could not decode image (%d bytes)", len(img_bytes))
         return []
-
+ 
     h, w = img.shape[:2]
     min_area = w * h * min_panel_ratio
-
-    # Convert to grayscale and threshold: white/near-white → background (0),
-    # everything else → foreground (255). This isolates the panel borders.
+ 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    _, thresh = cv2.threshold(
+ 
+    # ── Mask 1: near-white pixels (original logic) ─────────────────────────
+    # Pixels above (255 - tolerance) are background/gutter → foreground in mask
+    _, white_mask = cv2.threshold(
         gray,
         255 - background_tolerance,
         255,
-        cv2.THRESH_BINARY_INV,
+        cv2.THRESH_BINARY,      # white pixels → 255, everything else → 0
     )
-
-    # Dilate slightly to close gaps in panel borders (thin gutters).
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-    dilated = cv2.dilate(thresh, kernel, iterations=2)
-
-    # Find external contours — each closed contour is a candidate panel.
+ 
+    # ── Mask 2: near-black pixels (new) ───────────────────────────────────
+    # Pixels below tolerance are black borders → foreground in mask
+    _, black_mask = cv2.threshold(
+        gray,
+        background_tolerance,   # pixels darker than this → 255
+        255,
+        cv2.THRESH_BINARY_INV,  # invert: dark → 255, bright → 0
+    )
+ 
+    # ── Combine: anything that is a separator (white OR black) ────────────
+    separator_mask = cv2.bitwise_or(white_mask, black_mask)
+ 
+    # Invert so panel interiors are foreground (255) and separators are 0
+    panel_mask = cv2.bitwise_not(separator_mask)
+ 
+    # Dilate to close small gaps within panel content (speech bubbles, etc.)
+    # Use a slightly larger kernel than before since black borders can be thicker
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+    dilated = cv2.dilate(panel_mask, kernel, iterations=2)
+ 
+    # ── Find contours ─────────────────────────────────────────────────────
     contours, _ = cv2.findContours(
         dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
     )
-
+ 
     panels: list[tuple[int, int, int, int]] = []
     for cnt in contours:
         x, y, cw, ch = cv2.boundingRect(cnt)
         area = cw * ch
-        # Skip: too small, or essentially the whole page (splash noise).
         if area < min_area:
             continue
         if cw >= w * 0.95 and ch >= h * 0.95:
             continue
         panels.append((x, y, cw, ch))
-
+ 
     if not panels:
-        # Fallback: treat the entire page as one panel (splash / full-page art).
         log.debug("No panels detected — treating full page as single panel.")
         return [(0, 0, w, h)]
-
-    # Reading-order sort: group into rows by y-overlap, then sort each row by x.
+ 
     panels = _sort_reading_order(panels, rtl=rtl)
     return panels
+ 
 
 
 def _sort_reading_order(
@@ -209,22 +216,19 @@ async def process_chapter(
     quality: str = "data",
     min_panel_ratio: float = 0.02,
     use_counts: dict[str, int],
+    seen_chapters: set[str],          # ← add this
 ) -> tuple[int, list[dict[str, Any]]]:
- 
+
     chapter_id: str = chapter["id"]
     attrs: dict[str, Any] = chapter.get("attributes") or {}
     chapter_number: str = attrs.get("chapter") or "unknown"
- 
-    # ── DEDUPLICATION FIX ──────────────────────────────────────────────────
-    # MangaDex may return the same chapter from multiple scanlation groups.
-    # We only want the first one. If we've already processed this chapter
-    # number, skip it entirely — don't create a Chapter 1 (2) folder.
-    if chapter_number in use_counts:
-        log.info(
-            "Skipping duplicate chapter %s (already processed)", chapter_number
-        )
+
+    # DEDUPLICATION FIX — check seen_chapters, not use_counts
+    if chapter_number in seen_chapters:
+        log.info("Skipping duplicate chapter %s (already processed)", chapter_number)
         return 0, []
-    # ──────────────────────────────────────────────────────────────────────
+    seen_chapters.add(chapter_number)   # ← mark as seen before processing
+
  
     base_label = chapter_folder_label(attrs, chapter_id)
     folder_name = unique_chapter_directory_name(base_label, use_counts)
@@ -320,33 +324,31 @@ async def run(
     async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
         client = MangaDexClient(session, user_agent)
         use_counts: dict[str, int] = {}
+        seen_chapters: set[str] = set()    # ← add this, was wrongly {} (a dict)
         total_panels = 0
         chapters_done = 0
         all_metadata: list[dict[str, Any]] = []
- 
+
         async for chapter in paginate_chapter_ids(client, manga_id):
             if max_chapters is not None and chapters_done >= max_chapters:
                 break
- 
+
             saved, chapter_meta = await process_chapter(
-                client,
-                chapter,
-                out_dir,
-                manga_id,
+                client, chapter, out_dir, manga_id,
                 quality=quality,
                 min_panel_ratio=min_panel_ratio,
                 use_counts=use_counts,
+                seen_chapters=seen_chapters,    # ← pass it in
             )
-            total_panels += saved
-            chapters_done += 1
-            all_metadata.extend(chapter_meta)
- 
-            log.info(
-                "Chapter %d done — %d panels saved (total so far: %d)",
-                chapters_done,
-                saved,
-                total_panels,
-            )
+
+            # Only count chapters that actually did work
+            if saved > 0 or chapter_meta:
+                total_panels += saved
+                chapters_done += 1
+                all_metadata.extend(chapter_meta)
+                log.info("Chapter %d done — %d panels saved (total so far: %d)",
+                        chapters_done, saved, total_panels)
+
  
     # Write master dataset.json at the root of the output directory.
     dataset = {

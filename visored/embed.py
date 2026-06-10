@@ -1,4 +1,3 @@
-
 """
 embed.py — Visored Panel Embedding Pipeline
 ============================================
@@ -8,7 +7,7 @@ and saves a FAISS index + parallel metadata file for fast nearest-neighbor searc
 Run:
     python embed.py
     python embed.py --model ViT-L-14 --out-dir index_L14
-    python embed.py --panels-dir bleach_panels --out-dir . --model ViT-B-32
+    python embed.py --model ViT-L-14 --checkpoint clip_finetuned/best_checkpoint.pt --out-dir index_finetuned
 """
  
 import argparse
@@ -42,10 +41,10 @@ BATCH_SIZE = 32   # Lower than before — L14 is heavier; 32 is safe for both mo
 # Helpers
 # ---------------------------------------------------------------------------
  
-def load_model(model_name: str, device: str):
+def load_model(model_name: str, device: str, checkpoint: Path | None = None):
     """
     Load the CLIP model and its image preprocessor.
-    model_name must be a key in MODEL_REGISTRY.
+    If checkpoint is provided, load fine-tuned weights on top of base model.
     """
     if model_name not in MODEL_REGISTRY:
         sys.exit(f"[embed] ERROR: unknown model '{model_name}'. Choose from: {list(MODEL_REGISTRY)}")
@@ -55,6 +54,16 @@ def load_model(model_name: str, device: str):
     model, _, preprocess = open_clip.create_model_and_transforms(
         model_name, pretrained=cfg["pretrained"]
     )
+ 
+    if checkpoint is not None:
+        if not checkpoint.exists():
+            sys.exit(f"[embed] ERROR: checkpoint not found at {checkpoint}")
+        print(f"[embed] Loading fine-tuned weights from {checkpoint}...")
+        ckpt = torch.load(checkpoint, map_location=device)
+        model.load_state_dict(ckpt["state_dict"])
+        print(f"[embed] Checkpoint: epoch {ckpt['epoch']}, "
+              f"Recall@1: {ckpt['recall_at_1']:.2%}")
+ 
     model.eval()
     model.to(device)
     return model, preprocess, cfg["dim"]
@@ -113,10 +122,13 @@ def main():
                         help="Where to write index.faiss and index_meta.json (default: .)")
     parser.add_argument("--model", default="ViT-B-32", choices=list(MODEL_REGISTRY),
                         help="CLIP model variant (default: ViT-B-32)")
+    parser.add_argument("--checkpoint", default=None,
+                        help="Path to fine-tuned checkpoint .pt file (optional)")
     args = parser.parse_args()
  
     panels_dir = Path(args.panels_dir)
     out_dir    = Path(args.out_dir)
+    checkpoint = Path(args.checkpoint) if args.checkpoint else None
     out_dir.mkdir(parents=True, exist_ok=True)
  
     if torch.cuda.is_available():
@@ -126,11 +138,11 @@ def main():
     else:
         device = "cpu"
  
-    model, preprocess, dim = load_model(args.model, device)
+    model, preprocess, dim = load_model(args.model, device, checkpoint)
     panels = load_dataset(panels_dir)
  
-    # Save which model was used — query.py reads this to auto-select the right model
-    config = {"model": args.model, "dim": dim}
+    # Save config — include checkpoint path so you know which index used fine-tuned weights
+    config = {"model": args.model, "dim": dim, "checkpoint": args.checkpoint}
     with open(out_dir / "index_config.json", "w") as f:
         json.dump(config, f, indent=2)
     print(f"[embed] Saved index config → {out_dir}/index_config.json")
