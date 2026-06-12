@@ -1,12 +1,8 @@
 """
 extract_frames.py — Extract frames from anime episodes for labeling
 ===================================================================
-Extracts one frame every N seconds from an episode and saves them
-to screenshots/Chapter X/ folders.
-
 Run:
-    python extract_frames.py --episode episodes/episode4.mp4 --chapter 11
-    python extract_frames.py --episode episodes/episode5.mp4 --chapter 13 --interval 4
+    python extract_frames.py --episode episodes/episode5.mp4 --chapter 10 --interval 5
 """
 
 import argparse
@@ -14,11 +10,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from certifi.__main__ import parser
-
 SCREENSHOTS_DIR = Path("screenshots")
 FFMPEG = r"C:\Users\dfddd\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe"
-
 
 
 def extract_frames(episode_path: Path, chapter: int, interval: int):
@@ -29,7 +22,6 @@ def extract_frames(episode_path: Path, chapter: int, interval: int):
     print(f"[extract] Output  : {out_dir}")
     print(f"[extract] Interval: one frame every {interval}s")
 
-    # Count existing frames so we don't overwrite
     existing = list(out_dir.glob("frame_*.jpg"))
     start_num = len(existing)
     print(f"[extract] {start_num} existing frames in folder — new ones will continue from there")
@@ -39,12 +31,12 @@ def extract_frames(episode_path: Path, chapter: int, interval: int):
     cmd = [
         FFMPEG,
         "-i", str(episode_path),
-        "-vf", f"fps=1/{interval}",          # one frame every N seconds
-        "-q:v", "2",                          # JPEG quality (2 = high, 31 = low)
-        "-start_number", str(start_num + 1),  # don't overwrite existing
+        "-vf", f"fps=1/{interval}",
+        "-q:v", "2",
+        "-start_number", str(start_num + 1),
         output_pattern,
         "-hide_banner",
-        "-loglevel", "warning",               # suppress ffmpeg spam
+        "-loglevel", "warning",
     ]
 
     print(f"[extract] Running ffmpeg...\n")
@@ -60,8 +52,8 @@ def extract_frames(episode_path: Path, chapter: int, interval: int):
 
 def main():
     parser = argparse.ArgumentParser(description="Extract frames from anime episodes.")
-    parser.add_argument("--episode",  required=True, help="Path to episode file e.g. episodes/episode4.mp4")
-    parser.add_argument("--chapter",  required=True, type=int, help="Chapter folder to save frames into e.g. 11")
+    parser.add_argument("--episode",  required=True, help="Path to episode file")
+    parser.add_argument("--chapter",  required=True, type=int, help="Chapter folder to save frames into")
     parser.add_argument("--interval", type=int, default=3, help="Extract one frame every N seconds (default: 3)")
     args = parser.parse_args()
 

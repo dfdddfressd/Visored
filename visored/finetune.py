@@ -230,14 +230,11 @@ def main():
                         help="Keep ≤16 on CPU; batch size determines negative count")
     parser.add_argument("--lr",         type=float, default=1e-5,
                         help="Learning rate — keep small (1e-5 to 5e-6) to avoid forgetting")
-    parser.add_argument("--seed",       type=int,   default=42)
     parser.add_argument("--no-manga-mode", action="store_true",
                         help="Disable grayscale preprocessing on anime screenshots")
     parser.add_argument("--seed",       type=int,   default=42)
     parser.add_argument("--checkpoint", type=str,   default=None,
                     help="Path to checkpoint to resume from e.g. clip_finetuned/best_checkpoint.pt")
-    parser.add_argument("--no-manga-mode", action="store_true",
-                    help="Disable grayscale preprocessing on anime screenshots")
 
     args = parser.parse_args()
 

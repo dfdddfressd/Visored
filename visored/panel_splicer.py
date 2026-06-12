@@ -316,6 +316,8 @@ async def run(
     min_panel_ratio: float = 0.02,
     max_chapters: int | None = None,
     user_agent: str,
+    skip_existing: bool = False, 
+
 ) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     connector = aiohttp.TCPConnector(limit=16)
@@ -332,6 +334,17 @@ async def run(
         async for chapter in paginate_chapter_ids(client, manga_id):
             if max_chapters is not None and chapters_done >= max_chapters:
                 break
+            if skip_existing:
+                attrs = chapter.get("attributes") or {}
+                base_label = chapter_folder_label(attrs, chapter["id"])
+                folder_name = unique_chapter_directory_name(base_label, use_counts)
+                chapter_dir = out_dir / folder_name
+                if chapter_dir.exists():
+                    log.info("Skipping existing chapter folder: %s", folder_name)
+                    seen_chapters.add(attrs.get("chapter") or "unknown")
+                    use_counts[base_label] = use_counts.get(base_label, 0) + 1
+                    chapters_done += 1
+                    continue
 
             saved, chapter_meta = await process_chapter(
                 client, chapter, out_dir, manga_id,
@@ -419,6 +432,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Enable DEBUG logging",
     )
+    p.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip chapters whose output folder already exists on disk",
+    )
+    
     return p.parse_args(argv)
 
 
@@ -447,6 +466,8 @@ def main(argv: list[str] | None = None) -> None:
             min_panel_ratio=args.min_panel_ratio,
             max_chapters=args.chapters,
             user_agent=ua,
+            skip_existing=args.skip_existing,  # ← add this
+
         )
     )
 
