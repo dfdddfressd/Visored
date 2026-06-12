@@ -26,6 +26,7 @@ bleach_panels/
 labels.json
 skips.json
 screenshots/
+episodes
 
 # Common OS noise
 .DS_Store

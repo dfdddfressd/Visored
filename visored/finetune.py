@@ -42,7 +42,7 @@ OUT_DIR      = Path("clip_finetuned")
 # while allowing high-level semantic representations to adapt.
 # 4 is a good starting point for 130 pairs — more blocks = more capacity
 # but also more risk of overfitting on a small dataset.
-UNFREEZE_LAST_N_BLOCKS = 4
+UNFREEZE_LAST_N_BLOCKS = 2
 
 
 # ---------------------------------------------------------------------------
@@ -233,6 +233,12 @@ def main():
     parser.add_argument("--seed",       type=int,   default=42)
     parser.add_argument("--no-manga-mode", action="store_true",
                         help="Disable grayscale preprocessing on anime screenshots")
+    parser.add_argument("--seed",       type=int,   default=42)
+    parser.add_argument("--checkpoint", type=str,   default=None,
+                    help="Path to checkpoint to resume from e.g. clip_finetuned/best_checkpoint.pt")
+    parser.add_argument("--no-manga-mode", action="store_true",
+                    help="Disable grayscale preprocessing on anime screenshots")
+
     args = parser.parse_args()
 
     random.seed(args.seed)
@@ -281,6 +287,15 @@ def main():
         MODEL_NAME, pretrained=PRETRAINED
     )
     model.to(device)
+    
+    if args.checkpoint:
+        ckpt_path = Path(args.checkpoint)
+        if not ckpt_path.exists():
+            sys.exit(f"[finetune] Checkpoint not found: {ckpt_path}")
+        ckpt = torch.load(ckpt_path, map_location=device)
+        model.load_state_dict(ckpt["state_dict"])
+        print(f"[finetune] Resuming from checkpoint: {ckpt_path}")
+        print(f"[finetune] Previous best — epoch: {ckpt['epoch']}, Recall@1: {ckpt['recall_at_1']:.2%}")
 
     # Freeze everything, then selectively unfreeze last N blocks
     freeze_model(model)
@@ -355,11 +370,16 @@ def main():
 
         # Validation
         val_loss, recall_at_1 = validate(model, val_loader, device)
+        
+        proj_norm = None
+        if hasattr(model.visual, 'proj') and model.visual.proj is not None:
+            proj_norm = model.visual.proj.norm().item()
 
         print(f"Epoch {epoch:02d}/{args.epochs} — "
-              f"train_loss: {avg_train_loss:.4f} | "
-              f"val_loss: {val_loss:.4f} | "
-              f"Recall@1: {recall_at_1:.2%}")
+            f"train_loss: {avg_train_loss:.4f} | "
+            f"val_loss: {val_loss:.4f} | "
+            f"Recall@1: {recall_at_1:.2%} | "
+            f"proj_norm: {proj_norm:.2f}")
 
         # Save best checkpoint by Recall@1
         if recall_at_1 >= best_recall:
@@ -375,6 +395,17 @@ def main():
                 "state_dict":  model.state_dict(),
             }, ckpt_path)
             print(f"  ✓ Saved best checkpoint (Recall@1: {recall_at_1:.2%})")
+            
+            # Always save a per-epoch checkpoint so we never lose a good run
+            epoch_ckpt_path = OUT_DIR / f"checkpoint_epoch{epoch:02d}.pt"
+            torch.save({
+                "epoch":       epoch,
+                "model_name":  MODEL_NAME,
+                "pretrained":  PRETRAINED,
+                "recall_at_1": recall_at_1,
+                "val_loss":    val_loss,
+                "state_dict":  model.state_dict(),
+            }, epoch_ckpt_path)
 
     print(f"\n[finetune] Done. Best Recall@1: {best_recall:.2%} at epoch {best_epoch}")
     print(f"[finetune] Checkpoint saved to {OUT_DIR}/best_checkpoint.pt")
@@ -383,3 +414,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
