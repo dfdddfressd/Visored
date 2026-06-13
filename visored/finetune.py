@@ -42,7 +42,7 @@ OUT_DIR      = Path("clip_finetuned")
 # while allowing high-level semantic representations to adapt.
 # 4 is a good starting point for 130 pairs — more blocks = more capacity
 # but also more risk of overfitting on a small dataset.
-UNFREEZE_LAST_N_BLOCKS = 2
+UNFREEZE_LAST_N_BLOCKS = 4
 
 
 # ---------------------------------------------------------------------------

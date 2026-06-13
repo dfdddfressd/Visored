@@ -156,7 +156,6 @@
     overflow: hidden;
   }
  
-  /* 5th candidate spans both columns on the last row */
   .candidate:nth-child(5) { grid-column: span 2; }
  
   .candidate {
@@ -316,6 +315,7 @@
     overflow: hidden;
   }
  
+  /* ── Modal header: title + close only ── */
   .modal-header {
     display: flex;
     align-items: center;
@@ -326,24 +326,50 @@
   }
   .modal-header h2 { font-size: 14px; font-weight: 600; flex: 1; }
  
-  .chapter-tabs {
+  /* ── Chapter sidebar + panel grid layout ── */
+  .modal-body {
+    flex: 1;
     display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
+    overflow: hidden;
+    min-height: 0;
   }
-  .chapter-tab {
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    color: var(--muted);
-    font-size: 11px;
-    cursor: pointer;
-    transition: background .15s, color .15s;
-  }
-  .chapter-tab:hover { background: var(--border); color: var(--text); }
-  .chapter-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
  
+  /* ── Chapter sidebar ── */
+  .chapter-sidebar {
+    width: 160px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 8px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+ 
+  .chapter-sidebar::-webkit-scrollbar { width: 4px; }
+  .chapter-sidebar::-webkit-scrollbar-track { background: transparent; }
+  .chapter-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+ 
+  .chapter-tab {
+    width: 100%;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s, color .15s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chapter-tab:hover { background: var(--surface2); color: var(--text); }
+  .chapter-tab.active { background: var(--accent); color: #fff; }
+ 
+  /* ── Panel browse grid ── */
   .browse-grid {
     flex: 1;
     display: grid;
@@ -351,10 +377,14 @@
     grid-auto-rows: 260px;
     gap: 8px;
     padding: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
     min-height: 0;
     align-content: start;
   }
+ 
+  .browse-grid::-webkit-scrollbar { width: 6px; }
+  .browse-grid::-webkit-scrollbar-track { background: transparent; }
+  .browse-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
  
   .browse-panel {
     background: var(--surface2);
@@ -478,10 +508,14 @@
   <div class="modal">
     <div class="modal-header">
       <h2>Browse panels manually</h2>
-      <div class="chapter-tabs" id="chapter-tabs"></div>
       <button class="btn btn-ghost" style="padding:4px 10px;font-size:12px" onclick="closeBrowse()">✕ Close</button>
     </div>
-    <div class="browse-grid" id="browse-grid"></div>
+    <div class="modal-body">
+      <!-- Chapter list sidebar -->
+      <div class="chapter-sidebar" id="chapter-tabs"></div>
+      <!-- Panel grid -->
+      <div class="browse-grid" id="browse-grid"></div>
+    </div>
     <div class="modal-footer">
       <span id="browse-selected-info">Click a panel to select it</span>
       <button class="btn btn-ghost" onclick="closeBrowse()">Cancel</button>
@@ -494,15 +528,24 @@
  
 <script>
 const API = 'http://localhost:8000';
-let currentScreenshot = null;   // { filename, url }
-let candidates        = [];     // array of candidate objects from /search
-let selectedIdx       = null;   // which candidate is selected (0-based)
+let currentScreenshot = null;
+let candidates        = [];
+let selectedIdx       = null;
 let queuePos          = { index: 0, total: 0 };
+ 
+// ── Natural sort for chapter names ────────────────────────────────────────
+// Sorts "Chapter 2" before "Chapter 10" correctly
+function naturalSort(a, b) {
+  const num = s => {
+    const m = s.match(/\d+/);
+    return m ? parseInt(m[0]) : 0;
+  };
+  return num(a) - num(b);
+}
  
 // ── Boot ──────────────────────────────────────────────────────────────────
  
 async function init() {
-  // Wait until the server is fully ready (model loaded) before fetching first screenshot
   let ready = false;
   while (!ready) {
     try {
@@ -552,12 +595,11 @@ async function loadNext() {
     filename:       data.filename,
     rel:            data.rel,
     url:            data.url,
-    chapter_folder: data.chapter_folder,   // e.g. "Chapter 1" or null
+    chapter_folder: data.chapter_folder,
   });
 }
  
 async function prevScreenshot() {
-  // Re-fetch from server would require cursor manipulation; for now just toast
   toast('Use the queue — previous is already labeled ✓');
 }
  
@@ -572,7 +614,6 @@ async function loadScreenshot(shot) {
   hint.style.display = 'none';
   dz.classList.add('has-image');
  
-  // Show chapter badge alongside filename if inside a subfolder
   const chapterBadge = shot.chapter_folder
     ? `<span style="color:var(--accent);margin-right:6px">[${shot.chapter_folder}]</span>`
     : '';
@@ -590,7 +631,6 @@ async function loadScreenshot(shot) {
 async function searchCandidates(screenshotUrl) {
   showSearching();
  
-  // Encode each path segment separately to handle spaces in "Chapter 1" etc.
   const encodedUrl = screenshotUrl.split('/').map((seg, i) =>
     i === 0 ? seg : encodeURIComponent(seg)
   ).join('/');
@@ -608,7 +648,6 @@ async function searchCandidates(screenshotUrl) {
  
   const r = await fetch(`${API}/search`, { method: 'POST', body: form });
   if (r.status === 503) {
-    // Model still loading — wait 2s and retry once
     await new Promise(res => setTimeout(res, 2000));
     return searchCandidates(screenshotUrl);
   }
@@ -720,7 +759,6 @@ function setupDropZone() {
     await handleDroppedFile(file);
   });
  
-  // Click to open file picker when no image loaded
   dz.addEventListener('click', () => {
     if (dz.classList.contains('has-image')) return;
     const input = document.createElement('input');
@@ -756,7 +794,7 @@ async function handleDroppedFile(file) {
 // ── Browse mode ───────────────────────────────────────────────────────────
  
 let browseChapters    = [];
-let browseSelected    = null;   // { chapter, page, panel, folder, file, url }
+let browseSelected    = null;
 let activeChapterTab  = null;
  
 async function openBrowse() {
@@ -765,22 +803,21 @@ async function openBrowse() {
   document.getElementById('btn-browse-confirm').disabled = true;
   document.getElementById('browse-selected-info').textContent = 'Click a panel to select it';
  
-  // Load chapter list if we haven't yet
   if (browseChapters.length === 0) {
     const r = await fetch(`${API}/chapters`);
     const d = await r.json();
-    browseChapters = d.chapters;
+    // Natural sort so Chapter 2 comes before Chapter 10
+    browseChapters = d.chapters.sort(naturalSort);
   }
  
   renderChapterTabs();
   document.getElementById('modal-overlay').classList.add('open');
  
-  // Auto-load the chapter that matches the current screenshot's subfolder.
-  // Falls back to first chapter if no match (flat layout or mismatch).
-  const targetChapter = currentScreenshot.chapter_folder
-    && browseChapters.find(ch => ch === currentScreenshot.chapter_folder);
-  const defaultChapter = targetChapter || browseChapters[0];
-  if (defaultChapter) await loadBrowseChapter(defaultChapter);
+  const targetChapter = activeChapterTab
+    || (currentScreenshot.chapter_folder && browseChapters.find(ch => ch === currentScreenshot.chapter_folder))
+    || browseChapters[0];
+  if (targetChapter) await loadBrowseChapter(targetChapter);
+
 }
  
 function closeBrowse() {
@@ -806,10 +843,13 @@ function renderChapterTabs() {
 async function loadBrowseChapter(folder) {
   activeChapterTab = folder;
  
-  // Update active tab style
   document.querySelectorAll('.chapter-tab').forEach(t => {
     t.classList.toggle('active', t.textContent === folder);
   });
+ 
+  // Scroll active tab into view in the sidebar
+  const activeTab = document.querySelector('.chapter-tab.active');
+  if (activeTab) activeTab.scrollIntoView({ block: 'nearest' });
  
   const grid = document.getElementById('browse-grid');
   grid.innerHTML = '<div class="loading"><div class="spinner"></div><span>Loading panels…</span></div>';
@@ -851,9 +891,9 @@ async function confirmBrowsePick() {
       chapter:          p.chapter,
       page:             p.page,
       panel:            p.panel,
-      score:            0,          // 0 = manually picked, not FAISS ranked
+      score:            0,
       manga_mode:       false,
-      manual_pick:      true,       // flag so you can tell these apart in labels.json
+      manual_pick:      true,
     }),
   });
  
@@ -919,13 +959,12 @@ function toast(msg) {
   toastTimer = setTimeout(() => el.classList.remove('show'), 2000);
 }
  
-// ── Confirm button in footer (dynamically created) ───────────────────────
+// ── Confirm button in footer ───────────────────────────────────────────────
  
 document.querySelector('footer').insertAdjacentHTML('afterbegin',
   '<button class="btn btn-primary" id="btn-confirm" disabled onclick="confirmLabel()">Confirm match ↵</button>'
 );
  
-// Enable confirm when a candidate is selected
 const origSelect = selectCandidate;
 window.selectCandidate = function(idx) {
   origSelect(idx);
@@ -937,3 +976,4 @@ init();
 </script>
 </body>
 </html>
+ 
