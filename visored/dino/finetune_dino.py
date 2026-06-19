@@ -63,7 +63,7 @@ OUT_DIR         = Path("dino_finetuned")
 DINO_DIM = 768   # ViT-B/14 output dimension (same as CLIP ViT-L/14, convenient coincidence)
 
 # Conservative — see module docstring for reasoning
-UNFREEZE_LAST_N_BLOCKS = 4
+UNFREEZE_LAST_N_BLOCKS = 3
 
 
 # ---------------------------------------------------------------------------
