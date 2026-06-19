@@ -177,14 +177,15 @@ class MangaDexClient:
         )
 
     async def get_manga_feed_page(
-        self, manga_id: str, limit: int, offset: int
+    self, manga_id: str, limit: int, offset: int, language: str = "en"
     ) -> dict[str, Any]:
         params = {
-            "translatedLanguage[]": "en",
+            "translatedLanguage[]": language,
             "order[chapter]": "asc",
             "limit": str(limit),
             "offset": str(offset),
         }
+
         q = urlencode(params)
         url = f"{API_BASE}/manga/{manga_id}/feed?{q}"
         return await self._request_api_json("GET", url)
@@ -258,11 +259,11 @@ async def paginate_chapter_ids(
     client: MangaDexClient,
     manga_id: str = DEFAULT_MANGA_ID,
     page_size: int = 100,
+    language: str = "en",
 ) -> AsyncIterator[dict[str, Any]]:
-    """Yield chapter resources from manga feed (skips external / non-@Home chapters)."""
     offset = 0
     while True:
-        payload = await client.get_manga_feed_page(manga_id, page_size, offset)
+        payload = await client.get_manga_feed_page(manga_id, page_size, offset, language)
         data = payload.get("data") or []
         if not data:
             break

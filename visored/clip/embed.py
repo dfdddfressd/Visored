@@ -22,7 +22,7 @@ import torch
 from PIL import Image
 from tqdm import tqdm
  
- 
+
 # ---------------------------------------------------------------------------
 # Model registry
 # Centralised here so embed.py and query.py always agree on dim + weights.
@@ -116,12 +116,12 @@ def build_faiss_index(embeddings: np.ndarray, dim: int) -> faiss.Index:
  
 def main():
     parser = argparse.ArgumentParser(description="Embed Bleach manga panels with CLIP.")
-    parser.add_argument("--panels-dir", default="bleach_panels",
-                        help="Path to panel_splicer output directory (default: bleach_panels)")
+    parser.add_argument("--panels-dir", default="../bleach_panels",
+                        help="Path to panel_splicer output directory (default: ../bleach_panels)")
     parser.add_argument("--out-dir", default=".",
                         help="Where to write index.faiss and index_meta.json (default: .)")
     parser.add_argument("--model", default="ViT-B-32", choices=list(MODEL_REGISTRY),
-                        help="CLIP model variant (default: ViT-B-32)")
+                            help="CLIP model variant (default: ViT-B-32)")
     parser.add_argument("--checkpoint", default=None,
                         help="Path to fine-tuned checkpoint .pt file (optional)")
     args = parser.parse_args()

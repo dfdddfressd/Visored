@@ -25,6 +25,7 @@ import sys
 import json
 from pathlib import Path
 from typing import Any
+from xmlrpc import client
 
 
 import cv2
@@ -317,6 +318,8 @@ async def run(
     max_chapters: int | None = None,
     user_agent: str,
     skip_existing: bool = False, 
+    language: str = "en",
+
 
 ) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -331,7 +334,7 @@ async def run(
         chapters_done = 0
         all_metadata: list[dict[str, Any]] = []
 
-        async for chapter in paginate_chapter_ids(client, manga_id):
+        async for chapter in paginate_chapter_ids(client, manga_id, language=args.language):
             if max_chapters is not None and chapters_done >= max_chapters:
                 break
             if skip_existing:
@@ -437,6 +440,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Skip chapters whose output folder already exists on disk",
     )
+    p.add_argument(
+    "--language",
+    default="en",
+    help="Translation language code: 'en' for English, 'es' for Spanish (default: en)",
+    )  
     
     return p.parse_args(argv)
 
@@ -466,7 +474,8 @@ def main(argv: list[str] | None = None) -> None:
             min_panel_ratio=args.min_panel_ratio,
             max_chapters=args.chapters,
             user_agent=ua,
-            skip_existing=args.skip_existing,  # ← add this
+            skip_existing=args.skip_existing, 
+            language=args.language,
 
         )
     )

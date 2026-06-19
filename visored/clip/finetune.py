@@ -32,10 +32,11 @@ from tqdm import tqdm
 
 MODEL_NAME   = "ViT-L-14"
 PRETRAINED   = "openai"
-LABELS_FILE  = Path("labels.json")
-PANELS_DIR   = Path("bleach_panels")
-SCREENSHOTS_DIR = Path("screenshots")
+LABELS_FILE  = Path("../labels.json")
+PANELS_DIR   = Path("../bleach_panels")
+SCREENSHOTS_DIR = Path("../screenshots")
 OUT_DIR      = Path("clip_finetuned")
+
 
 # How many of the 24 transformer blocks to unfreeze for training.
 # Unfreezing only the last N blocks preserves low-level visual knowledge

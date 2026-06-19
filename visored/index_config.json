@@ -1,4 +1,5 @@
 {
-  "model": "ViT-B-32",
-  "dim": 512
+  "model": "ViT-L-14",
+  "dim": 768,
+  "checkpoint": "clip_finetuned/best_checkpoint.pt"
 }
