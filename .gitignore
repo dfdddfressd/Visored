@@ -24,7 +24,7 @@ best_checkpoint.pt
 # Generated data
 bleach_panels/
 labels.json
-skips.json
+visored/skips.json
 screenshots/
 episodes
 
