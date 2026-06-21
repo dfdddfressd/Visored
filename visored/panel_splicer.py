@@ -25,7 +25,6 @@ import sys
 import json
 from pathlib import Path
 from typing import Any
-from xmlrpc import client
 
 
 import cv2
@@ -317,8 +316,10 @@ async def run(
     min_panel_ratio: float = 0.02,
     max_chapters: int | None = None,
     user_agent: str,
-    skip_existing: bool = False, 
+    skip_existing: bool = False,     
     language: str = "en",
+    start_chapter: float | None = None,
+    end_chapter: float | None = None,
 
 
 ) -> None:
@@ -334,18 +335,37 @@ async def run(
         chapters_done = 0
         all_metadata: list[dict[str, Any]] = []
 
-        async for chapter in paginate_chapter_ids(client, manga_id, language=args.language):
+        async for chapter in paginate_chapter_ids(client, manga_id, language=language):
             if max_chapters is not None and chapters_done >= max_chapters:
                 break
-            if skip_existing:
-                attrs = chapter.get("attributes") or {}
-                base_label = chapter_folder_label(attrs, chapter["id"])
-                folder_name = unique_chapter_directory_name(base_label, use_counts)
-                chapter_dir = out_dir / folder_name
-                if chapter_dir.exists():
-                    log.info("Skipping existing chapter folder: %s", folder_name)
-                    seen_chapters.add(attrs.get("chapter") or "unknown")
-                    use_counts[base_label] = use_counts.get(base_label, 0) + 1
+
+            attrs = chapter.get("attributes") or {}
+            ch_num_str = attrs.get("chapter")
+            try:
+                ch_num = float(ch_num_str) if ch_num_str else None
+            except ValueError:
+                ch_num = None
+
+            # ── Chapter range filtering ──────────────────────────────────────
+            if start_chapter is not None and ch_num is not None and ch_num < start_chapter:
+                continue
+            if end_chapter is not None and ch_num is not None and ch_num > end_chapter:
+                continue
+
+            # ── Skip existing — match by chapter NUMBER, not exact folder name,
+            # so "Chapter 11" and "Chapter 11 (2)" are both recognized as
+            # "chapter 11 already exists" regardless of suffix ────────────────
+            if skip_existing and ch_num_str:
+                existing_for_this_chapter = list(out_dir.glob(f"Chapter {ch_num_str}*"))
+                # Filter out false positives like "Chapter 110" matching "Chapter 11*"
+                existing_for_this_chapter = [
+                    d for d in existing_for_this_chapter
+                    if d.name == f"Chapter {ch_num_str}" or d.name.startswith(f"Chapter {ch_num_str} (")
+                ]
+                if existing_for_this_chapter:
+                    log.info("Skipping chapter %s — folder already exists: %s",
+                            ch_num_str, existing_for_this_chapter[0].name)
+                    seen_chapters.add(ch_num_str)
                     chapters_done += 1
                     continue
 
@@ -354,16 +374,16 @@ async def run(
                 quality=quality,
                 min_panel_ratio=min_panel_ratio,
                 use_counts=use_counts,
-                seen_chapters=seen_chapters,    # ← pass it in
+                seen_chapters=seen_chapters,
             )
 
-            # Only count chapters that actually did work
             if saved > 0 or chapter_meta:
                 total_panels += saved
                 chapters_done += 1
                 all_metadata.extend(chapter_meta)
                 log.info("Chapter %d done — %d panels saved (total so far: %d)",
                         chapters_done, saved, total_panels)
+
 
  
     # Write master dataset.json at the root of the output directory.
@@ -412,6 +432,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=float,
         default=0.02,
         help="Minimum panel area as a fraction of page area (default 0.02 = 2%%)",
+    )
+    p.add_argument(
+        "--start-chapter",
+        type=float,
+        default=None,
+        help="Only process chapters >= this number (for targeted re-splicing)",
+    )
+    p.add_argument(
+        "--end-chapter",
+        type=float,
+        default=None,
+        help="Stop processing chapters > this number"
     )
     p.add_argument(
         "--chapters",
@@ -476,6 +508,9 @@ def main(argv: list[str] | None = None) -> None:
             user_agent=ua,
             skip_existing=args.skip_existing, 
             language=args.language,
+            start_chapter=args.start_chapter,
+            end_chapter=args.end_chapter,
+
 
         )
     )
