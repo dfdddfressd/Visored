@@ -150,10 +150,36 @@ def detect_panels(
     if not panels:
         log.debug("No panels detected — treating full page as single panel.")
         return [(0, 0, w, h)]
- 
+        
+    # ── Full-page spread detection ───────────────────────────────────────────
+    # If the total area covered by detected panels is less than 50% of the page,
+    # or if removing the largest panel leaves almost nothing, the contour detector
+    # has likely mis-split a full-page spread along speech bubble borders or ink
+    # lines. In that case, treat the whole page as a single panel.
+    if panels:
+        page_area = w * h
+        total_panel_area = sum(pw * ph for _, _, pw, ph in panels)
+        largest_panel_area = max(pw * ph for _, _, pw, ph in panels)
+    
+        # Condition 1: panels collectively cover less than half the page
+        # (means most of the page is being excluded as "gutter" — wrong)
+        coverage_ratio = total_panel_area / page_area
+        
+        # Condition 2: largest single panel covers >65% of the page alone
+        # (means this is probably just one big panel being detected alongside
+        # small false-positive speech bubble crops)
+        largest_ratio = largest_panel_area / page_area
+        
+        if coverage_ratio < 0.50 or largest_ratio > 0.65:
+            log.debug(
+                "Full-page spread detected (coverage=%.2f, largest=%.2f) "
+                "— returning whole page as single panel.",
+                coverage_ratio, largest_ratio,
+            )
+            return [(0, 0, w, h)]
+
     panels = _sort_reading_order(panels, rtl=rtl)
     return panels
- 
 
 
 def _sort_reading_order(
