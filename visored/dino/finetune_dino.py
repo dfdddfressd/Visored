@@ -49,7 +49,7 @@ from transformers import AutoImageProcessor, AutoModel
 from tqdm import tqdm
 
 # ---------------------------------------------------------------------------
-# Config
+# Config - constants
 # ---------------------------------------------------------------------------
 
 # facebook/dinov2-base = ViT-B/14, 86M params, 768-dim output
