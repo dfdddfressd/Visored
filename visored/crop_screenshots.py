@@ -49,10 +49,10 @@ def crop_chapter(chapter: int, crop: float, dry_run: bool) -> int:
         return len(frames)
 
     for frame_path in tqdm(frames, desc=f"  Chapter {chapter}", leave=False):
-        img = Image.open(frame_path)
-        w, h = img.size
-        new_h = int(h * (1.0 - crop))
-        cropped = img.crop((0, 0, w, new_h))
+        with Image.open(frame_path) as img:
+            w, h = img.size
+            new_h = int(h * (1.0 - crop))
+            cropped = img.crop((0, 0, w, new_h))
         cropped.save(frame_path, "JPEG", quality=95)
 
     return len(frames)
