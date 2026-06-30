@@ -109,11 +109,34 @@ Evaluates against the full FAISS index (not just val subset) to get real-world r
 | DINOv2 finetuned v1 | 74.65% | 142 | chapters 1-32 only |
 | DINOv2 finetuned v2 (5e-6 LR) | 38.20% | 233 | multi-arc |
 | DINOv2 zero-shot (multi-arc val) | 12.89% | 225 | multi-arc |
-| DINOv2 finetuned v3 (1e-6 LR) | 22.67% | 225 | multi-arc |
+| DINOv2 finetuned v3 (1e-6 LR, 1125 pairs) | 22.67% | 225 | multi-arc |
+| DINOv2 finetuned v4 (1e-6 LR, 1815 pairs, crop fix) | 30.02% | 413 | multi-arc + Fullbring |
+| DINOv2 finetuned v5 (1e-6 LR, 2051 pairs, + Soul Society) | 28.18% | 401 | multi-arc + Soul Society + Fullbring (Chapter 506 had 24 corrupted labels) |
+| DINOv2 finetuned v5-corrected (same checkpoint, Chapter 506 labels fixed) | 32.06% | 393 | same data, corrected labels |
 
-**Important:** Val set comparisons across runs are not apples-to-apples. The multi-arc val set is significantly harder than the chapters 1-32 val set. Finetuned v3 at 22.67% on multi-arc val represents ~75% improvement over zero-shot on the same val set.
+**Important:** Val set comparisons across runs are not apples-to-apples — val set size and composition shift as new arcs are added. The multi-arc val set is significantly harder than the chapters 1-32 val set.
+
+**v4 → v5 apparent regression (30.02% → 28.18%) was partly a label corruption artifact, not a real regression.** Investigation traced ~24 of 102 Chapter 506 labels to a "labeled before re-splice" bug (see Known Bugs below). After removing and re-labeling those 24 pairs (no retrain needed — same checkpoint, corrected index), Recall@1 on the same model improved to 32.06%, Recall@5 to 49.11%. This confirms the v4→v5 retrain itself was a genuine improvement; the apparent dip was measurement noise from corrupted ground truth, not the model getting worse. **Methodological lesson for paper writeup:** label integrity checks should be standard practice before trusting eval deltas between runs — a few percent of corrupted labels can fully mask or fabricate an apparent training effect.
 
 ---
+
+## Known Bugs & Fixes
+
+### Label staleness after targeted re-splice (found & fixed)
+**Bug:** `rebuild_dataset.py` aggregated each chapter's `metadata.json` blindly without validating against actual files on disk. When a chapter was re-spliced after some of its screenshots were already labeled (e.g. Chapter 506 was re-spliced mid-session to fix the Zanka no Tachi full-page-spread bug), the panel-to-filename mapping shifted for that chapter, silently invalidating any labels made before the re-splice. The label itself was correct at the time it was made — the ground truth moved out from under it afterward.
+
+**Detection method:** Compared each label's `confirmed_at` timestamp against its chapter's `metadata.json` last-modified timestamp. Labels confirmed *before* the most recent `metadata.json` write are suspect, since the panel content at that path may have changed since.
+
+**Scope:** Out of 102 Chapter 506 labels, 24 (~23%) were confirmed before the chapter's final re-splice and were corrupted. All other chapters were clean — confirmed via `check_label_staleness.py` run across all 113 labeled chapters. (Chapters 1-32 falsely flagged by timestamp proximity at first pass — six chapters' metadata.json files were all written within a 5-second window during the original splice run, not a later re-splice; false positive, no action needed.)
+
+**Fix applied:**
+1. `rebuild_dataset.py` rewritten to validate every metadata.json entry against actual file existence on disk, dropping and reporting any phantom entries instead of trusting metadata.json blindly.
+2. `check_label_staleness.py` created — audits every labeled chapter for labels confirmed before their metadata.json's last write, flagging potential drift.
+3. The 24 corrupted Chapter 506 labels were removed and re-labeled against the current correct panel set.
+
+**Impact:** Re-evaluating the v5 checkpoint (same model, no retrain) on the corrected labels moved Recall@1 from 28.18% → 32.06%, Recall@5 from 44.64% → 49.11%. The apparent v4→v5 "regression" was substantially a measurement artifact from corrupted ground truth in the val set, not a real model regression.
+
+**Process change going forward:** Any time a chapter is re-spliced for any reason after labeling has already started on it, run `check_label_staleness.py` before the next retrain/eval cycle. This should become a standard pre-flight check, not a one-off investigation.
 
 ## Current Bottleneck
 Labeled data volume and arc coverage. Current labeled episodes:
