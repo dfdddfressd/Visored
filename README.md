@@ -1,5 +1,6 @@
 # Visored
 
+visored.net
 Visored is an AI-powered visual retrieval system that maps Bleach anime screenshots to their corresponding manga source panels. The core challenge is cross-domain matching: anime frames are full-color and cinematically lit, while manga panels are black-and-white line art — standard pixel-level similarity approaches fail badly across this boundary.
 
 The system uses fine-tuned DINOv2 embeddings and FAISS similarity search to retrieve semantically matching panels from a corpus of 42,000+ images spanning 706 manga chapters, achieving **81% Recall@1** on the full index.
