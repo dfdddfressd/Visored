@@ -5,22 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visored — Bleach Anime → Manga Panel Search</title>
   <style>
-    /* ── Tokens ──────────────────────────────────────────────────────── */
     :root {
       --bg:        #0f0f0f;
       --surface:   #171717;
       --border:    #2a2a2a;
-      --accent:    #c9a84c;   /* aged gold — ink meets Shinigami insignia */
+      --accent:    #c9a84c;
       --accent-dim:#7a6530;
       --text:      #e8e8e8;
       --text-dim:  #888;
-      --red:       #c0392b;   /* Hollow red — used sparingly */
+      --red:       #c0392b;
       --radius:    4px;
       --mono:      "JetBrains Mono", "Fira Mono", monospace;
       --sans:      "Inter", system-ui, sans-serif;
     }
 
-    /* ── Reset ───────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
@@ -33,67 +31,76 @@
       min-height: 100vh;
     }
 
-    /* ── Layout ──────────────────────────────────────────────────────── */
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* ── Header ──────────────────────────────────────────────────────── */
+    /* ── Header — Visored big, inline with tagline ── */
     header {
       border-bottom: 1px solid var(--border);
       padding: 32px 0 24px;
     }
 
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     .wordmark {
-      font-family: var(--mono);
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      font-family: var(--sans);
+      font-size: clamp(48px, 8vw, 72px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
       color: var(--accent);
-      margin-bottom: 12px;
+      line-height: 1;
+      flex-shrink: 0;
     }
 
-    h1 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
+    .header-tagline {
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 600;
       color: var(--text);
-    }
-
-    h1 span {
-      color: var(--accent);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
     }
 
     .subtitle {
-      margin-top: 10px;
+      margin-top: 14px;
       color: var(--text-dim);
       font-size: 14px;
-      max-width: 520px;
+      max-width: 100%;
+      line-height: 1.7;
     }
 
-    /* ── Upload zone ─────────────────────────────────────────────────── */
+    /* ── Upload zone ── */
     .upload-section {
       padding: 40px 0 32px;
       border-bottom: 1px solid var(--border);
     }
 
+    /* Drop zone — doubles as preview container */
     .drop-zone {
       border: 1.5px dashed var(--border);
       border-radius: var(--radius);
-      padding: 48px 24px;
-      text-align: center;
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
       position: relative;
+      overflow: hidden;
     }
 
     .drop-zone:hover,
     .drop-zone.drag-over {
       border-color: var(--accent);
       background: rgba(201, 168, 76, 0.04);
+    }
+
+    /* When image is loaded, remove hover tint so image shows clean */
+    .drop-zone.has-image:hover {
+      background: transparent;
     }
 
     .drop-zone input[type="file"] {
@@ -103,6 +110,14 @@
       cursor: pointer;
       width: 100%;
       height: 100%;
+      z-index: 2;
+    }
+
+    /* Default empty state content */
+    .drop-inner {
+      padding: 48px 24px;
+      text-align: center;
+      pointer-events: none;
     }
 
     .drop-icon {
@@ -128,41 +143,65 @@
       font-family: var(--mono);
     }
 
-    /* Preview of uploaded screenshot */
-    .preview-wrap {
-      margin-top: 20px;
+    /* Preview image fills the box */
+    .drop-preview {
+      display: none;
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .drop-zone.has-image .drop-inner {
       display: none;
     }
 
-    .preview-wrap.visible {
+    .drop-zone.has-image .drop-preview {
+      display: block;
+    }
+
+    /* Change-image overlay hint */
+    .drop-overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .drop-zone.has-image:hover .drop-overlay {
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
     }
 
-    .preview-img {
-      width: 180px;
-      height: 101px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    .preview-meta {
+    /* File meta below the box */
+    .file-meta {
+      display: none;
       font-family: var(--mono);
       font-size: 12px;
       color: var(--text-dim);
+      margin-top: 10px;
       line-height: 1.8;
     }
 
-    .preview-meta .filename {
+    .file-meta.visible {
+      display: block;
+    }
+
+    .file-meta .filename {
       color: var(--text);
       font-weight: 600;
     }
 
     .search-btn {
-      margin-top: 20px;
+      margin-top: 16px;
       background: var(--accent);
       color: #0f0f0f;
       border: none;
@@ -180,7 +219,6 @@
     .search-btn:hover { background: #d4b560; }
     .search-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-    /* ── Status bar ──────────────────────────────────────────────────── */
     .status {
       font-family: var(--mono);
       font-size: 12px;
@@ -192,7 +230,7 @@
     .status.searching { color: var(--accent); }
     .status.error     { color: var(--red); }
 
-    /* ── Results ─────────────────────────────────────────────────────── */
+    /* ── Results ── */
     .results-section {
       padding: 32px 0 48px;
     }
@@ -218,7 +256,6 @@
       color: var(--accent-dim);
     }
 
-    /* Grid — same feel as labeler */
     .results-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -233,13 +270,8 @@
       transition: border-color 0.15s;
     }
 
-    .result-card:hover {
-      border-color: var(--accent-dim);
-    }
-
-    .result-card.rank-1 {
-      border-color: var(--accent);
-    }
+    .result-card:hover { border-color: var(--accent-dim); }
+    .result-card.rank-1 { border-color: var(--accent); }
 
     .result-img-wrap {
       width: 100%;
@@ -275,9 +307,7 @@
       font-weight: 700;
     }
 
-    .result-meta {
-      padding: 10px 12px 12px;
-    }
+    .result-meta { padding: 10px 12px 12px; }
 
     .result-chapter {
       font-size: 13px;
@@ -300,7 +330,7 @@
       margin-top: 6px;
     }
 
-    /* ── Skeleton loading ────────────────────────────────────────────── */
+    /* ── Skeletons ── */
     .skeleton {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -322,17 +352,14 @@
       margin: 10px 12px 6px;
     }
 
-    .skeleton-line.short {
-      width: 60%;
-      margin-bottom: 12px;
-    }
+    .skeleton-line.short { width: 60%; margin-bottom: 12px; }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.5; }
     }
 
-    /* ── Empty / instructions ────────────────────────────────────────── */
+    /* ── Empty state ── */
     .empty-state {
       padding: 48px 0;
       text-align: center;
@@ -347,7 +374,7 @@
       opacity: 0.3;
     }
 
-    /* ── Footer ──────────────────────────────────────────────────────── */
+    /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 20px 0;
@@ -360,25 +387,12 @@
       gap: 8px;
     }
 
-    footer a {
-      color: var(--accent-dim);
-      text-decoration: none;
-    }
-
+    footer a { color: var(--accent-dim); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
-    /* ── Responsive ──────────────────────────────────────────────────── */
     @media (max-width: 600px) {
-      .results-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .preview-wrap.visible {
-        flex-direction: column;
-      }
-      .preview-img {
-        width: 100%;
-        height: auto;
-      }
+      .results-grid { grid-template-columns: 1fr 1fr; }
+      .header-top { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
@@ -388,11 +402,13 @@
 
   <!-- Header -->
   <header>
-    <div class="wordmark">Visored</div>
-    <h1>Find the <span>manga panel</span><br>behind any Bleach scene.</h1>
+    <div class="header-top">
+      <div class="wordmark">Visored</div>
+      <div class="header-tagline">Find the manga panel<br>behind any Bleach scene.</div>
+    </div>
     <p class="subtitle">
-      Upload an anime screenshot — Visored retrieves the closest matching
-      manga panel from all 686 chapters using fine-tuned visual embeddings.
+      Upload an anime screenshot — Visored searches across all 686 chapters and 39,916 manga panels
+      using fine-tuned DINOv2 visual embeddings to find the closest matching panel.
     </p>
   </header>
 
@@ -400,18 +416,21 @@
   <section class="upload-section">
     <div class="drop-zone" id="dropZone">
       <input type="file" id="fileInput" accept="image/*" />
-      <div class="drop-icon">⬆</div>
-      <p class="drop-label"><strong>Click or drag</strong> an anime screenshot here</p>
-      <p class="drop-hint">JPEG · PNG · WEBP</p>
+      <div class="drop-inner">
+        <div class="drop-icon">⬆</div>
+        <p class="drop-label"><strong>Click or drag</strong> an anime screenshot here</p>
+        <p class="drop-hint">JPEG · PNG · WEBP</p>
+      </div>
+      <img class="drop-preview" id="dropPreview" src="" alt="Selected screenshot" />
+      <div class="drop-overlay">Click to change image</div>
     </div>
 
-    <div class="preview-wrap" id="previewWrap">
-      <img class="preview-img" id="previewImg" src="" alt="Preview" />
-      <div class="preview-meta">
-        <div class="filename" id="previewName"></div>
-        <div id="previewSize"></div>
-        <div id="previewDims"></div>
-      </div>
+    <div class="file-meta" id="fileMeta">
+      <span class="filename" id="previewName"></span>
+      &nbsp;·&nbsp;
+      <span id="previewSize"></span>
+      &nbsp;·&nbsp;
+      <span id="previewDims"></span>
     </div>
 
     <button class="search-btn" id="searchBtn" disabled>Search</button>
@@ -421,7 +440,7 @@
   <!-- Results -->
   <section class="results-section" id="resultsSection">
     <div class="empty-state" id="emptyState">
-      <div class="glyph">-</div>
+      <div class="glyph">+++</div>
       <div>Upload a screenshot to search across 39,916 manga panels.</div>
     </div>
     <div id="resultsHeader" class="results-header" style="display:none">
@@ -434,29 +453,29 @@
   <!-- Footer -->
   <footer>
     <span>Visored — cross-domain visual retrieval · DINOv2 + FAISS · 686 chapters</span>
-    <span>Built by David</span>
+    <span><a href="https://www.buymeacoffee.com/dfdddfressd" target="_blank">Buy me a coffee</a></span>
   </footer>
 
 </div>
 
 <script>
-  const dropZone   = document.getElementById('dropZone');
-  const fileInput  = document.getElementById('fileInput');
-  const previewWrap= document.getElementById('previewWrap');
-  const previewImg = document.getElementById('previewImg');
-  const previewName= document.getElementById('previewName');
-  const previewSize= document.getElementById('previewSize');
-  const previewDims= document.getElementById('previewDims');
-  const searchBtn  = document.getElementById('searchBtn');
-  const status     = document.getElementById('status');
-  const emptyState = document.getElementById('emptyState');
+  const dropZone    = document.getElementById('dropZone');
+  const fileInput   = document.getElementById('fileInput');
+  const dropPreview = document.getElementById('dropPreview');
+  const fileMeta    = document.getElementById('fileMeta');
+  const previewName = document.getElementById('previewName');
+  const previewSize = document.getElementById('previewSize');
+  const previewDims = document.getElementById('previewDims');
+  const searchBtn   = document.getElementById('searchBtn');
+  const status      = document.getElementById('status');
+  const emptyState  = document.getElementById('emptyState');
   const resultsHeader = document.getElementById('resultsHeader');
   const resultsCount  = document.getElementById('resultsCount');
   const resultsGrid   = document.getElementById('resultsGrid');
 
   let selectedFile = null;
 
-  // ── Drag and drop ──────────────────────────────────────────────────
+  // ── Drag and drop ──
   dropZone.addEventListener('dragover', e => {
     e.preventDefault();
     dropZone.classList.add('drag-over');
@@ -473,24 +492,30 @@
     if (fileInput.files[0]) handleFile(fileInput.files[0]);
   });
 
-  // ── File handling ──────────────────────────────────────────────────
+  // ── File handling ──
   function handleFile(file) {
     selectedFile = file;
     const url = URL.createObjectURL(file);
-    previewImg.src = url;
+
+    // Show image inside the drop zone, hide the prompt
+    dropPreview.src = url;
+    dropZone.classList.add('has-image');
+
+    // File metadata below the box
     previewName.textContent = file.name;
     previewSize.textContent = formatBytes(file.size);
-    previewWrap.classList.add('visible');
-    searchBtn.disabled = false;
-    status.textContent = '';
-    status.className = 'status';
+    fileMeta.classList.add('visible');
 
-    // Get image dimensions
+    // Image dimensions
     const img = new Image();
     img.onload = () => {
       previewDims.textContent = `${img.naturalWidth} × ${img.naturalHeight}px`;
     };
     img.src = url;
+
+    searchBtn.disabled = false;
+    status.textContent = '';
+    status.className = 'status';
   }
 
   function formatBytes(bytes) {
@@ -499,7 +524,7 @@
     return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
   }
 
-  // ── Search ─────────────────────────────────────────────────────────
+  // ── Search ──
   searchBtn.addEventListener('click', runSearch);
 
   async function runSearch() {
@@ -535,7 +560,7 @@
     }
   }
 
-  // ── Skeletons ──────────────────────────────────────────────────────
+  // ── Skeletons ──
   function showSkeletons() {
     resultsGrid.innerHTML = Array(6).fill(0).map(() => `
       <div class="skeleton">
@@ -546,7 +571,7 @@
     `).join('');
   }
 
-  // ── Render results ─────────────────────────────────────────────────
+  // ── Render results ──
   function showResults(results) {
     resultsGrid.innerHTML = '';
     resultsHeader.style.display = 'flex';
@@ -563,9 +588,7 @@
         </div>
         <div class="result-meta">
           <div class="result-chapter">Chapter ${r.chapter}</div>
-          <div class="result-detail">
-            Page ${r.page} · Panel ${r.panel}
-          </div>
+          <div class="result-detail">Page ${r.page} · Panel ${r.panel}</div>
           <div class="result-score">similarity ${r.score.toFixed(3)}</div>
         </div>
       `;
@@ -573,7 +596,6 @@
     });
   }
 
-  // Allow pressing Enter to search
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !searchBtn.disabled && selectedFile) runSearch();
   });
