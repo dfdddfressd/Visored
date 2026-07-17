@@ -23,12 +23,15 @@ import faiss
 import numpy as np
 import torch
 import io
-from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi import FastAPI, HTTPException, UploadFile, File, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from PIL import Image
 from torchvision import transforms
 from transformers import AutoImageProcessor, AutoModel
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 # ---------------------------------------------------------------------------
 # Config
@@ -40,10 +43,18 @@ INDEX_DIR   = Path(".")
 TOP_K       = 6
 
 # ---------------------------------------------------------------------------
+# Rate limiting — 10 search requests per minute per IP
+# ---------------------------------------------------------------------------
+
+limiter = Limiter(key_func=get_remote_address, default_limits=["10/minute"])
+
+# ---------------------------------------------------------------------------
 # App
 # ---------------------------------------------------------------------------
 
 app = FastAPI(title="Visored Search")
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -168,7 +179,8 @@ def serve_frontend():
 
 
 @app.post("/search")
-async def search_endpoint(file: UploadFile = File(...)):
+@limiter.limit("10/minute")
+async def search_endpoint(request: Request, file: UploadFile = File(...)):
     if state["model"] is None:
         raise HTTPException(503, "Model still loading — try again in a moment")
 
