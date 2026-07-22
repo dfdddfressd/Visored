@@ -26,7 +26,7 @@ bleach_panels/
 labels.json
 visored/skips.json
 screenshots/
-episodes
+episodes/
 
 # Common OS noise
 .DS_Store
